@@ -1,5 +1,6 @@
 .footer {
   margin: 50px 0;
+  align-self: end;
 }
 
 .footer__copyright {
