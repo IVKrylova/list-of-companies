@@ -6,7 +6,7 @@ const Table = props => {
     <section className='table'>
       <h2 className='table__title'>{props.title}</h2>
       <ul className='table__row'>
-        <li className='table__cell'>
+        <li className='table__cell column-name'>
           <input type='checkbox' id='joint-checkbox' name='joint-checkbox' className='joint-checkbox' />
           <label for='joint-checkbox'>Выделить всё</label>
         </li>

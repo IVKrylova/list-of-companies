@@ -11,7 +11,7 @@
   grid-template-columns: repeat(4, 1fr);
   text-align: center;
   padding: 0;
-  margin: 15px 0 0;
+  margin: 0;
   width: 100%;
 }
 
@@ -19,9 +19,12 @@
   box-sizing: border-box;
   border-right: 1px solid #000;
   border-bottom: 1px solid #000;
-  border-top: 1px solid #000;
 }
 
 .table__cell:first-child {
   border-left: 1px solid #000;
+}
+
+.column-name {
+  border-top: #000 solid 1px;
 }
