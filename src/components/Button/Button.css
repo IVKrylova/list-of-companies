@@ -1,0 +1,9 @@
+.button {
+  display: block;
+  box-sizing: border-box;
+  font-size: 12px;
+}
+
+.button_hidden {
+  display: none;
+}

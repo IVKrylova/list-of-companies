@@ -5,25 +5,34 @@ const Table = props => {
   return (
     <section className='table'>
       <h2 className='table__title'>{props.title}</h2>
-      <ul className='table__row'>
-        <li className='table__cell column-name'>
-          <input type='checkbox' id='joint-checkbox' name='joint-checkbox' className='joint-checkbox' />
-          <label for='joint-checkbox'>Выделить всё</label>
-        </li>
-        <li className='table__cell column-name'>
-          {props.secondColumn}
-        </li>
-        <li className='table__cell column-name'>
-          {props.thirdColumn}
-        </li>
-        <li className='table__cell column-name'>
-          {props.fourthColumn}
-        </li>
-      </ul>
+      {/* Шапка таблицы */}
       <Row
-        secondCell={props.secondCell}
-        thirdCell={props.thirdCell}
-        fourthCell={props.fourthCell}
+        formName={props.tableName}
+        cellClassModifier='row__cell_header'
+        labelText='Выделить всё'
+        secondCell={props.secondColumn}
+        thirdCell={props.thirdColumn}
+        fourthCell={props.fourthColumn}
+        editingSecondCell={true}
+        editingThirdCell={true}
+        editingFourthCell={true}
+        isHiddenButtonSave={true}
+        isHiddenButtonDelete={false}
+        isHiddenButtonAdd={true}
+      />
+      {/* Данные таблицы */}
+      {/* Строка для добавления данных */}
+      <Row
+        formName={`add-${props.tableName}`}
+        secondCell=''
+        thirdCell=''
+        fourthCell=''
+        editingSecondCell={false}
+        editingThirdCell={false}
+        editingFourthCell={false}
+        isHiddenButtonSave={true}
+        isHiddenButtonDelete={true}
+        isHiddenButtonAdd={false}
       />
     </section>
   );

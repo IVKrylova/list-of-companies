@@ -6,21 +6,17 @@ const Main = _ => {
     <main className='content'>
       <Table
         title='Компании'
+        tableName='companies'
         secondColumn='Название компании'
         thirdColumn='Кол-во сотрудников'
         fourthColumn='Адрес'
-        secondCell='xxxxxxxxxx'
-        thirdCell='xxxxxxxxx'
-        fourthCell='xxxxxxxxx'
       />
       <Table
         title='Сотрудники'
+        tableName='coworkers'
         secondColumn='Фамилия'
         thirdColumn='Имя'
         fourthColumn='Должность'
-        secondCell='xxxxxxxxxx'
-        thirdCell='xxxxxxxxx'
-        fourthCell='xxxxxxxxx'
       />
     </main>
   );

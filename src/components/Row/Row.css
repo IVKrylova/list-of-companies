@@ -1,1 +1,30 @@
+.row {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
 
+.row__cell {
+  box-sizing: border-box;
+  border-right: 1px solid #000;
+  border-bottom: 1px solid #000;
+  font-size: 12px;
+  padding: 5px;
+}
+
+.row__cell_textarea {
+  resize: none;
+  border-left: none;
+  border-top: none;
+}
+
+.row__cell:first-child {
+  border-left: 1px solid #000;
+}
+
+.row__cell_header {
+  border-top: #000 solid 1px;
+}
