@@ -1,4 +1,6 @@
 import { useSelector } from 'react-redux';
+import ListCompanies from '../ListCompanies/ListCompanies';
+import ListCoworkers from '../ListCoworkers/ListCoworkers';
 import Table from '../Table/Table';
 import './Main.css';
 
@@ -15,16 +17,22 @@ const Main = _ => {
         secondColumn='Название компании'
         thirdColumn='Кол-во сотрудников'
         fourthColumn='Адрес'
-        companies={companies}
-      />
+      >
+        <ListCompanies
+          companies={companies}
+        />
+      </Table>
       <Table
         title='Сотрудники'
         tableName='coworkers'
         secondColumn='Фамилия'
         thirdColumn='Имя'
         fourthColumn='Должность'
-        coworkers={coworkers}
-      />
+      >
+        <ListCoworkers
+          coworkers={coworkers}
+        />
+      </Table>
     </main>
   );
 }

@@ -21,7 +21,8 @@ const Table = props => {
         isHiddenButtonAdd={true}
       />
       {/* Данные таблицы */}
-      {props.companies &&
+      {props.children}
+      {/* {props.companies &&
         props.companies.map(companie => {
           return (
             <Row
@@ -58,7 +59,7 @@ const Table = props => {
             />
           )
         })
-      }
+      } */}
       {/* Строка для добавления данных */}
       <Row
         formName={`add-${props.tableName}`}

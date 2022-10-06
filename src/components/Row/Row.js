@@ -4,13 +4,13 @@ import './Row.css';
 
 const Row = props => {
   // стейт чекбокса
-  const [isChecked, setIsChecked] = useState(false);
+  const [isCheckedRow, setIsCheckedRow] = useState(false);
   // класс ячейки
-  const cellClassName = `row__cell ${props.cellClassModifier ? props.cellClassModifier : '' } ${isChecked ? 'row__cell_checked' : ''}`;
+  const cellClassName = `row__cell ${props.cellClassModifier ? props.cellClassModifier : '' } ${isCheckedRow ? 'row__cell_checked' : ''}`;
 
   // обработчик клика по чекбоксу
   const handleClickCheckbox = _ => {
-    isChecked ? setIsChecked(false) : setIsChecked(true);
+    isCheckedRow ? setIsCheckedRow(false) : setIsCheckedRow(true);
   }
 
   return (
@@ -20,7 +20,7 @@ const Row = props => {
           type='checkbox'
           id={`${props.formName}-checkbox`}
           name={`${props.formName}-checkbox`}
-          checked={isChecked}
+          checked={isCheckedRow}
           onClick={handleClickCheckbox}
         />
         {props.labelText ? props.labelText : ''}
