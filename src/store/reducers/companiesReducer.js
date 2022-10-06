@@ -11,6 +11,11 @@ export const companiesReducer = (state = initialState, action) => {
         ...state,
         companies: action.payload,
       };
+    case companiesActionTypes.CHECK_COMPANIE:
+      return {
+        ...state,
+        companies: action.payload,
+      };
     default:
       return state;
   }

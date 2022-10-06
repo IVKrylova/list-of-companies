@@ -16,6 +16,9 @@ const ListCompanies = props => {
           isHiddenButtonSave={false}
           isHiddenButtonDelete={false}
           isHiddenButtonAdd={true}
+          checked={companie.checked}
+          onClickCheckbox={props.onClickCheckbox}
+          companie={companie}
         />
        )
     })

@@ -4,10 +4,11 @@ import ListCoworkers from '../ListCoworkers/ListCoworkers';
 import Table from '../Table/Table';
 import './Main.css';
 
-const Main = _ => {
+const Main = props => {
   // получаем данные из store
   const companies = useSelector(store => store.companies.companies);
   const coworkers = useSelector(store => store.coworkers.coworkers);
+  const checkedCompanies = useSelector(store => store.checkedCompanies.checkedCompanies);
 
   return (
     <main className='content'>
@@ -17,9 +18,11 @@ const Main = _ => {
         secondColumn='Название компании'
         thirdColumn='Кол-во сотрудников'
         fourthColumn='Адрес'
+        isChecked={!!checkedCompanies.length}
       >
         <ListCompanies
           companies={companies}
+          onClickCheckbox={props.onClickCheckboxCompanie}
         />
       </Table>
       <Table

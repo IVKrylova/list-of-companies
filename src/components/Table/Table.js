@@ -30,7 +30,7 @@ const Table = props => {
         </li>
         <li>
           <Button
-            disabled={true}
+            disabled={!props.isChecked}
             buttonText='Удалить'
           />
         </li>

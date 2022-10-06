@@ -1,15 +1,12 @@
-import { useState } from 'react';
 import './Row.css';
 
 const Row = props => {
-  // стейт чекбокса
-  const [isCheckedRow, setIsCheckedRow] = useState(false);
   // класс ячейки
-  const cellClassName = `row__cell ${props.cellClassModifier ? props.cellClassModifier : '' } ${isCheckedRow ? 'row__cell_checked' : ''}`;
+  const cellClassName = `row__cell ${props.cellClassModifier ? props.cellClassModifier : ''} ${props.checked ? 'row__cell_checked' : ''}`;
 
   // обработчик клика по чекбоксу
   const handleClickCheckbox = _ => {
-    isCheckedRow ? setIsCheckedRow(false) : setIsCheckedRow(true);
+    props.companie && props.onClickCheckbox(props.companie);
   }
 
   return (
@@ -19,7 +16,7 @@ const Row = props => {
           type='checkbox'
           id={`${props.formName}-checkbox`}
           name={`${props.formName}-checkbox`}
-          checked={isCheckedRow}
+          checked={props.checked}
           onClick={handleClickCheckbox}
         />
         {props.labelText ? props.labelText : ''}
@@ -42,21 +39,6 @@ const Row = props => {
         defaultValue={props.fourthCell}
       >
       </textarea>
-     {/*  <Button
-        disabled={true}
-        buttonText='Сохранить'
-        isHidden={props.isHiddenButtonSave}
-      />
-      <Button
-        disabled={true}
-        buttonText='Удалить'
-        isHidden={props.isHiddenButtonDelete}
-      />
-      <Button
-        disabled={true}
-        buttonText='Добавить'
-        isHidden={props.isHiddenButtonAdd}
-      /> */}
     </fieldset>
   );
 }
