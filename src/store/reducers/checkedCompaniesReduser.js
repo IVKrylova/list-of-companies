@@ -11,6 +11,11 @@ export const checkedCompaniesReduser = (state = initialState, action) => {
         ...state,
         checkedCompanies: action.payload,
       };
+    case checkedCompaniesActionTypes.DELETE_COMPANIE:
+      return {
+        ...state,
+        checkedCompanies: action.payload,
+      };
     default:
       return state;
   }

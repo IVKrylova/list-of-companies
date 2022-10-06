@@ -8,7 +8,7 @@ import { mainApi } from '../../utils/MainApi';
 import { getCompanies } from '../../store/actionCreators/companies';
 import { getCoworkers } from '../../store/actionCreators/coworkers';
 import { checkCompanie } from '../../store/actionCreators/companies';
-import { addCompanieToChecked } from '../../store/actionCreators/checkedCompanies';
+import { addCompanieToChecked, deleteCompanieFromChecked } from '../../store/actionCreators/checkedCompanies';
 
 
 const App = _ => {
@@ -37,8 +37,12 @@ const App = _ => {
 
   // обработчик клика по чекбоксу компании
   const handleClickCheckboxCompanie = companie => {
+    // устанавливаем флаг в чекбоксе
     dispatch(checkCompanie(companies, companie));
-    dispatch(addCompanieToChecked(checkedCompanies, companie));
+    // добавляем/удаляем компанию из выбранных
+    companie.checked
+      ? dispatch(addCompanieToChecked(checkedCompanies, companie))
+      : dispatch(deleteCompanieFromChecked(checkedCompanies, companie));
   }
 
   return (
