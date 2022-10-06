@@ -1,10 +1,14 @@
+import { useSelector } from 'react-redux';
 import Row from '../Row/Row';
 import Button from '../Button/Button';
 import './Table.css';
 
 const Table = props => {
+  // получаем данные из store
+  const selectedCoworkers = useSelector(store => store.selectedCoworkers.selectedCoworkers);
+
   return (
-    <section className='table'>
+    <section className={`table ${selectedCoworkers.length === 0 && props.tableName === 'coworkers' ? 'table_hidden' : ''}`}>
       <h2 className='table__title'>{props.title}</h2>
       <form className='form' id={props.tableName} name={props.tableName}>
       {/* Шапка таблицы */}
