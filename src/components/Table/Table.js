@@ -1,10 +1,12 @@
 import Row from '../Row/Row';
+import Button from '../Button/Button';
 import './Table.css';
 
 const Table = props => {
   return (
     <section className='table'>
       <h2 className='table__title'>{props.title}</h2>
+      <form className='form' id={props.tableName} name={props.tableName}>
       {/* Шапка таблицы */}
       <Row
         formName={props.tableName}
@@ -16,25 +18,41 @@ const Table = props => {
         editingSecondCell={true}
         editingThirdCell={true}
         editingFourthCell={true}
-        isHiddenButtonSave={true}
-        isHiddenButtonDelete={false}
-        isHiddenButtonAdd={true}
       />
       {/* Данные таблицы */}
       {props.children}
+      <ul className='buttons'>
+        <li>
+          <Button
+            disabled={true}
+            buttonText='Сохранить'
+          />
+        </li>
+        <li>
+          <Button
+            disabled={true}
+            buttonText='Удалить'
+          />
+        </li>
+      </ul>
+      </form>
       {/* Строка для добавления данных */}
-      <Row
-        formName={`add-${props.tableName}`}
-        secondCell=''
-        thirdCell=''
-        fourthCell=''
-        editingSecondCell={false}
-        editingThirdCell={false}
-        editingFourthCell={false}
-        isHiddenButtonSave={true}
-        isHiddenButtonDelete={true}
-        isHiddenButtonAdd={false}
-      />
+      <form>
+        <Row
+          formName={`add-${props.tableName}`}
+          cellClassModifier='row__cell_adding'
+          secondCell=''
+          thirdCell=''
+          fourthCell=''
+          editingSecondCell={false}
+          editingThirdCell={false}
+          editingFourthCell={false}
+        />
+        <Button
+          disabled={true}
+          buttonText='Добавить'
+        />
+      </form>
     </section>
   );
 }

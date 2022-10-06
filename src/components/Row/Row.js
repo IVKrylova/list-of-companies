@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import Button from '../Button/Button';
 import './Row.css';
 
 const Row = props => {
@@ -14,7 +13,7 @@ const Row = props => {
   }
 
   return (
-    <form className='row' id={props.formName} name={props.formName}>
+    <fieldset className='row'>
       <label className={cellClassName}>
         <input
           type='checkbox'
@@ -43,7 +42,7 @@ const Row = props => {
         defaultValue={props.fourthCell}
       >
       </textarea>
-      <Button
+     {/*  <Button
         disabled={true}
         buttonText='Сохранить'
         isHidden={props.isHiddenButtonSave}
@@ -57,8 +56,8 @@ const Row = props => {
         disabled={true}
         buttonText='Добавить'
         isHidden={props.isHiddenButtonAdd}
-      />
-    </form>
+      /> */}
+    </fieldset>
   );
 }
 

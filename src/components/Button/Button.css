@@ -2,8 +2,6 @@
   display: block;
   box-sizing: border-box;
   font-size: 12px;
-}
-
-.button_hidden {
-  display: none;
+  margin-top: 10px;
+  margin-bottom: 20px;
 }
