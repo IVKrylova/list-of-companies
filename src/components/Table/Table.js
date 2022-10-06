@@ -22,44 +22,6 @@ const Table = props => {
       />
       {/* Данные таблицы */}
       {props.children}
-      {/* {props.companies &&
-        props.companies.map(companie => {
-          return (
-            <Row
-              key={companie.id}
-              formName={companie.name}
-              editingSecondCell={false}
-              secondCell={companie.name}
-              editingThirdCell={true}
-              thirdCell='count'
-              editingFourthCell={false}
-              fourthCell={companie.address}
-              isHiddenButtonSave={false}
-              isHiddenButtonDelete={false}
-              isHiddenButtonAdd={true}
-            />
-          )
-        })
-      }
-      {props.coworkers &&
-        props.coworkers.map(coworker => {
-          return (
-            <Row
-              key={coworker.id}
-              formName={coworker.lastname}
-              editingSecondCell={false}
-              secondCell={coworker.lastname}
-              editingThirdCell={false}
-              thirdCell={coworker.name}
-              editingFourthCell={false}
-              fourthCell={coworker.position}
-              isHiddenButtonSave={false}
-              isHiddenButtonDelete={false}
-              isHiddenButtonAdd={true}
-            />
-          )
-        })
-      } */}
       {/* Строка для добавления данных */}
       <Row
         formName={`add-${props.tableName}`}

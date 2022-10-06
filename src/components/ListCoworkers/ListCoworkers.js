@@ -6,13 +6,13 @@ const ListCoworkers = props => {
       return (
         <Row
           key={coworker.id}
-          formName={coworker.name}
+          formName={coworker.lastname}
           editingSecondCell={false}
-          secondCell={coworker.name}
-          editingThirdCell={true}
-          thirdCell='count'
+          secondCell={coworker.lastname}
+          editingThirdCell={false}
+          thirdCell={coworker.name}
           editingFourthCell={false}
-          fourthCell={coworker.address}
+          fourthCell={coworker.position}
           isHiddenButtonSave={false}
           isHiddenButtonDelete={false}
           isHiddenButtonAdd={true}
