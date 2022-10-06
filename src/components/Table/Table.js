@@ -21,6 +21,44 @@ const Table = props => {
         isHiddenButtonAdd={true}
       />
       {/* Данные таблицы */}
+      {props.companies &&
+        props.companies.map(companie => {
+          return (
+            <Row
+              key={companie.id}
+              formName={companie.name}
+              editingSecondCell={true}
+              secondCell={companie.name}
+              editingThirdCell={false}
+              thirdCell='count'
+              editingFourthCell={true}
+              fourthCell={companie.address}
+              isHiddenButtonSave={false}
+              isHiddenButtonDelete={false}
+              isHiddenButtonAdd={true}
+            />
+          )
+        })
+      }
+      {props.coworkers &&
+        props.coworkers.map(coworker => {
+          return (
+            <Row
+              key={coworker.id}
+              formName={coworker.lastname}
+              editingSecondCell={true}
+              secondCell={coworker.lastname}
+              editingThirdCell={true}
+              thirdCell={coworker.name}
+              editingFourthCell={true}
+              fourthCell={coworker.position}
+              isHiddenButtonSave={false}
+              isHiddenButtonDelete={false}
+              isHiddenButtonAdd={true}
+            />
+          )
+        })
+      }
       {/* Строка для добавления данных */}
       <Row
         formName={`add-${props.tableName}`}

@@ -10,14 +10,23 @@ const Row = props => {
         <input type='checkbox' id={`${props.formName}-checkbox`} name={`${props.formName}-checkbox`} />
         {props.labelText ? props.labelText : ''}
       </label>
-      <textarea className={`${cellClassName} row__cell_textarea`} readOnly={props.editingSecondCell}>
-        {props.secondCell}
+      <textarea
+        className={`${cellClassName} row__cell_textarea`}
+        readOnly={props.editingSecondCell}
+        defaultValue={props.secondCell}
+      >
       </textarea>
-      <textarea className={`${cellClassName} row__cell_textarea`} readOnly={props.editingThirdCell}>
-        {props.thirdCell}
+      <textarea
+        className={`${cellClassName} row__cell_textarea`}
+        readOnly={props.editingThirdCell}
+        defaultValue={props.thirdCell}
+      >
       </textarea>
-      <textarea className={`${cellClassName} row__cell_textarea`} readOnly={props.editingFourthCell}>
-        {props.fourthCell}
+      <textarea
+        className={`${cellClassName} row__cell_textarea`}
+        readOnly={props.editingFourthCell}
+        defaultValue={props.fourthCell}
+      >
       </textarea>
       <Button
         disabled={true}
