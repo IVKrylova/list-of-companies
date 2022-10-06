@@ -1,13 +1,28 @@
+import { useState } from 'react';
 import Button from '../Button/Button';
 import './Row.css';
 
 const Row = props => {
-  const cellClassName = `row__cell ${props.cellClassModifier ? props.cellClassModifier : '' }`;
+  // стейт чекбокса
+  const [isChecked, setIsChecked] = useState(false);
+  // класс ячейки
+  const cellClassName = `row__cell ${props.cellClassModifier ? props.cellClassModifier : '' } ${isChecked ? 'row__cell_checked' : ''}`;
+
+  // обработчик клика по чекбоксу
+  const handleClickCheckbox = _ => {
+    isChecked ? setIsChecked(false) : setIsChecked(true);
+  }
 
   return (
     <form className='row' id={props.formName} name={props.formName}>
       <label className={cellClassName}>
-        <input type='checkbox' id={`${props.formName}-checkbox`} name={`${props.formName}-checkbox`} />
+        <input
+          type='checkbox'
+          id={`${props.formName}-checkbox`}
+          name={`${props.formName}-checkbox`}
+          checked={isChecked}
+          onClick={handleClickCheckbox}
+        />
         {props.labelText ? props.labelText : ''}
       </label>
       <textarea

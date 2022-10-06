@@ -7,6 +7,10 @@
   width: 100%;
 }
 
+.row__cell_checked {
+  background-color: #5a5e88;
+}
+
 .row__cell {
   box-sizing: border-box;
   border-right: 1px solid #000;
