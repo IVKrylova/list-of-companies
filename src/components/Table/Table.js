@@ -27,11 +27,11 @@ const Table = props => {
             <Row
               key={companie.id}
               formName={companie.name}
-              editingSecondCell={true}
+              editingSecondCell={false}
               secondCell={companie.name}
-              editingThirdCell={false}
+              editingThirdCell={true}
               thirdCell='count'
-              editingFourthCell={true}
+              editingFourthCell={false}
               fourthCell={companie.address}
               isHiddenButtonSave={false}
               isHiddenButtonDelete={false}
@@ -46,11 +46,11 @@ const Table = props => {
             <Row
               key={coworker.id}
               formName={coworker.lastname}
-              editingSecondCell={true}
+              editingSecondCell={false}
               secondCell={coworker.lastname}
-              editingThirdCell={true}
+              editingThirdCell={false}
               thirdCell={coworker.name}
-              editingFourthCell={true}
+              editingFourthCell={false}
               fourthCell={coworker.position}
               isHiddenButtonSave={false}
               isHiddenButtonDelete={false}
