@@ -5,11 +5,32 @@ import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import Main from '../Main/Main';
 import { mainApi } from '../../utils/MainApi';
-import { getCompanies, checkCompanie } from '../../store/actionCreators/companies';
-import { getCoworkers, checkCoworker } from '../../store/actionCreators/coworkers';
-import { addCompanieToChecked, deleteCompanieFromChecked } from '../../store/actionCreators/checkedCompanies';
-import { addCoworkers, deleteCoworkers } from '../../store/actionCreators/selectedCoworkers';
-import { addCoworkerToChecked, deleteCoworkerFromChecked } from '../../store/actionCreators/checkedCoworkers';
+import {
+  getCompanies,
+  checkCompanie,
+  checkAllCompanie,
+  uncheckAllCompanie,
+} from '../../store/actionCreators/companies';
+import {
+  getCoworkers,
+  checkCoworker,
+} from '../../store/actionCreators/coworkers';
+import {
+  addCompanieToChecked,
+  deleteCompanieFromChecked,
+  addAllCompaniesToChecked,
+  deleteAllCompaniesToChecked,
+} from '../../store/actionCreators/checkedCompanies';
+import {
+  addCoworkers,
+  deleteCoworkers,
+  addAllCoworkers,
+  deleteAllCoworkers,
+} from '../../store/actionCreators/selectedCoworkers';
+import {
+  addCoworkerToChecked,
+  deleteCoworkerFromChecked,
+} from '../../store/actionCreators/checkedCoworkers';
 
 const App = _ => {
   const dispatch = useDispatch();
@@ -59,15 +80,35 @@ const App = _ => {
 
   // обработчик клика по чекбоксу сотрудника
   const handleClickCheckboxCoworker = coworker => {
-    // устанавливаем флаг в чекбоксе
+    // переключаем флаг в чекбоксе
     dispatch(checkCoworker(selectedCoworkers, coworker));
     // добавляем/удаляем сотрудников из выбранных
     if (coworker.checked) {
       // добавляем сотрудников в массив выбранных
       dispatch(addCoworkerToChecked(checkedCoworkers, coworker));
     } else {
-      // удаляем компании из массива выбранных компаний
+      // удаляем сотрудников из массива выбранных компаний
       dispatch(deleteCoworkerFromChecked(checkedCoworkers, coworker));
+    }
+  }
+
+  // обработчик клика по чекбоксу в шапке таблицы компаний
+  const handleClickCheckboxAllCompanies = tableName => {
+    if (tableName === 'companies' && checkedCompanies.length !== companies.length) {
+      // добавляем компании в массив выбранных
+      dispatch(addAllCompaniesToChecked(companies));
+      // устанавливаем флаг в чекбоксе
+      dispatch(checkAllCompanie(companies));
+      // показываем массив с сотрудниками
+      dispatch(addAllCoworkers(coworkers))
+    }
+    if (tableName === 'companies' && checkedCompanies.length === companies.length) {
+      // удаляем компании из массива выбранных
+      dispatch(deleteAllCompaniesToChecked(companies));
+      // удаляем флаг в чекбоксе
+      dispatch(uncheckAllCompanie(companies));
+      // очищаем массив с сотрудниками
+      dispatch(deleteAllCoworkers(coworkers));
     }
   }
 
@@ -77,6 +118,7 @@ const App = _ => {
       <Main
         onClickCheckboxCompanie={handleClickCheckboxCompanie}
         onClickCheckboxCoworker={handleClickCheckboxCoworker}
+        onClickCheckboxAllCompanies={handleClickCheckboxAllCompanies}
       />
       <Footer />
     </div>

@@ -6,8 +6,14 @@ const Row = props => {
 
   // обработчик клика по чекбоксу
   const handleClickCheckbox = _ => {
-    props.companie && props.onClickCheckbox(props.companie);
-    props.coworker && props.onClickCheckbox(props.coworker);
+    if (props.labelText !== 'Выделить всё') {
+      props.companie && props.onClickCheckbox(props.companie);
+      props.coworker && props.onClickCheckbox(props.coworker);
+    }
+
+    if (props.labelText === 'Выделить всё') {
+      props.onClickCheckbox(props.formName);
+    }
   }
 
   return (

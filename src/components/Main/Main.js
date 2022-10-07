@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import ListCompanies from '../ListCompanies/ListCompanies';
 import ListCoworkers from '../ListCoworkers/ListCoworkers';
@@ -20,6 +19,7 @@ const Main = props => {
         thirdColumn='Кол-во сотрудников'
         fourthColumn='Адрес'
         isChecked={!!checkedCompanies.length}
+        onClickCheckbox={props.onClickCheckboxAllCompanies}
       >
         <ListCompanies
           companies={companies}
@@ -32,6 +32,7 @@ const Main = props => {
         secondColumn='Фамилия'
         thirdColumn='Имя'
         fourthColumn='Должность'
+        onClickCheckbox={props.onClickCheckboxAllCoworkers}
       >
         <ListCoworkers
           coworkers={selectedCoworkers}

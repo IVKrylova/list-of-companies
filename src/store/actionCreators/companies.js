@@ -24,3 +24,27 @@ export const checkCompanie = (companies, companie) => {
     }),
   }
 }
+
+// функция установки флажка в чекбоксе для всех компаний
+export const checkAllCompanie = companies => {
+  return {
+    type: companiesActionTypes.CHECK_ALL_COMPANIES,
+    payload: companies.map(el => {
+      el.checked = true;
+
+      return el;
+    }),
+  }
+}
+
+// функция снятия флажка в чекбоксе для всех компаний
+export const uncheckAllCompanie = companies => {
+  return {
+    type: companiesActionTypes.CHECK_ALL_COMPANIES,
+    payload: companies.map(el => {
+      el.checked = false;
+
+      return el;
+    }),
+  }
+}

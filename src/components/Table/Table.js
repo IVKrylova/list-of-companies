@@ -22,6 +22,7 @@ const Table = props => {
         editingSecondCell={true}
         editingThirdCell={true}
         editingFourthCell={true}
+        onClickCheckbox={props.onClickCheckbox}
       />
       {/* Данные таблицы */}
       {props.children}

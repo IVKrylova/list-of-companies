@@ -15,3 +15,19 @@ export const deleteCoworkers = (selectedCoworkers, companie) => {
     payload: selectedCoworkers.filter(el => el.company !== companie.name),
   }
 }
+
+// функция добавления всех сотрудников в массив
+export const addAllCoworkers = coworkers => {
+  return {
+    type: selectedCoworkersActionTypes.ADD_ALL_COWORKERS,
+    payload: coworkers,
+  }
+}
+
+// функция удаления всех сотрудников из массива
+export const deleteAllCoworkers = coworkers => {
+  return {
+    type: selectedCoworkersActionTypes.DELETE_COWORKERS,
+    payload: [],
+  }
+}
