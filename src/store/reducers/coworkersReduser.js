@@ -16,12 +16,12 @@ export const coworkersReducer = (state = initialState, action) => {
           ...state,
           coworkers: action.payload,
         };
-      case coworkersActionTypes.CHECK_ALL_COWORKER:
+      case coworkersActionTypes.CHECK_ALL_COWORKERS:
         return {
           ...state,
           coworkers: action.payload,
         };
-      case coworkersActionTypes.UNCHECK_ALL_COWORKER:
+      case coworkersActionTypes.UNCHECK_ALL_COWORKERS:
         return {
           ...state,
           coworkers: action.payload,

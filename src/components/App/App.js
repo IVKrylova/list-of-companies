@@ -85,7 +85,7 @@ const App = _ => {
   // обработчик клика по чекбоксу сотрудника
   const handleClickCheckboxCoworker = coworker => {
     // переключаем флаг в чекбоксе
-    dispatch(checkCoworker(selectedCoworkers, coworker));
+    dispatch(checkCoworker(coworkers, coworker));
     // добавляем/удаляем сотрудников из выбранных
     if (coworker.checked) {
       // добавляем сотрудников в массив выбранных
@@ -120,13 +120,13 @@ const App = _ => {
   const handleClickCheckboxAllCoworkers = isChecked => {
     if (!isChecked) {
       // устанавливаем флаг в чекбоксе
-      dispatch(checkAllCoworkers(selectedCoworkers));
+      dispatch(checkAllCoworkers(coworkers));
       // добавляем сотрудников в массив выбранных
       dispatch(addAllCoworkersToChecked(selectedCoworkers));
     }
     if (isChecked) {
       // удаляем флаг в чекбоксе
-      dispatch(uncheckAllCoworkers(selectedCoworkers));
+      dispatch(uncheckAllCoworkers(coworkers));
       // удаляем сотрудников из массива выбранных
       dispatch(deleteAllCoworkersFromChecked(checkedCoworkers));
     }
