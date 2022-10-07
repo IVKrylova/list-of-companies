@@ -1,6 +1,10 @@
+import { useSelector } from 'react-redux';
 import Row from '../Row/Row';
 
 const ListCompanies = props => {
+  // получаем данные из store
+  const coworkers = useSelector(store => store.coworkers.coworkers);
+
   return (
     props.companies && props.companies.map(companie => {
       return (
@@ -10,7 +14,7 @@ const ListCompanies = props => {
           editingSecondCell={false}
           secondCell={companie.name}
           editingThirdCell={true}
-          thirdCell='count'
+          thirdCell={coworkers.filter(el => el.company === companie.name).length}
           editingFourthCell={false}
           fourthCell={companie.address}
           isHiddenButtonSave={false}
