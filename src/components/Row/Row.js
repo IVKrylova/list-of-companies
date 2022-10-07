@@ -7,6 +7,7 @@ const Row = props => {
   // обработчик клика по чекбоксу
   const handleClickCheckbox = _ => {
     props.companie && props.onClickCheckbox(props.companie);
+    props.coworker && props.onClickCheckbox(props.coworker);
   }
 
   return (

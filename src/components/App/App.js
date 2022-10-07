@@ -5,11 +5,11 @@ import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import Main from '../Main/Main';
 import { mainApi } from '../../utils/MainApi';
-import { getCompanies } from '../../store/actionCreators/companies';
-import { getCoworkers } from '../../store/actionCreators/coworkers';
-import { checkCompanie } from '../../store/actionCreators/companies';
+import { getCompanies, checkCompanie } from '../../store/actionCreators/companies';
+import { getCoworkers, checkCoworker } from '../../store/actionCreators/coworkers';
 import { addCompanieToChecked, deleteCompanieFromChecked } from '../../store/actionCreators/checkedCompanies';
 import { addCoworkers, deleteCoworkers } from '../../store/actionCreators/selectedCoworkers';
+import { addCoworkerToChecked, deleteCoworkerFromChecked } from '../../store/actionCreators/checkedCoworkers';
 
 const App = _ => {
   const dispatch = useDispatch();
@@ -19,6 +19,7 @@ const App = _ => {
   const checkedCompanies = useSelector(store => store.checkedCompanies.checkedCompanies);
   const coworkers = useSelector(store => store.coworkers.coworkers);
   const selectedCoworkers = useSelector(store => store.selectedCoworkers.selectedCoworkers);
+  const checkedCoworkers = useSelector(store => store.checkedCoworkers.checkedCoworkers);
 
   // получаем компании при загрузке страницы
   useEffect(_ => {
@@ -56,11 +57,26 @@ const App = _ => {
     }
   }
 
+  // обработчик клика по чекбоксу сотрудника
+  const handleClickCheckboxCoworker = coworker => {
+    // устанавливаем флаг в чекбоксе
+    dispatch(checkCoworker(selectedCoworkers, coworker));
+    // добавляем/удаляем сотрудников из выбранных
+    if (coworker.checked) {
+      // добавляем сотрудников в массив выбранных
+      dispatch(addCoworkerToChecked(checkedCoworkers, coworker));
+    } else {
+      // удаляем компании из массива выбранных компаний
+      dispatch(deleteCoworkerFromChecked(checkedCoworkers, coworker));
+    }
+  }
+
   return (
     <div className="App">
       <Header />
       <Main
         onClickCheckboxCompanie={handleClickCheckboxCompanie}
+        onClickCheckboxCoworker={handleClickCheckboxCoworker}
       />
       <Footer />
     </div>

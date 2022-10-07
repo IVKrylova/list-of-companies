@@ -1,4 +1,4 @@
-import Row from "../Row/Row";
+import Row from '../Row/Row';
 
 const ListCoworkers = props => {
   return (
@@ -16,6 +16,9 @@ const ListCoworkers = props => {
           isHiddenButtonSave={false}
           isHiddenButtonDelete={false}
           isHiddenButtonAdd={true}
+          coworker={coworker}
+          onClickCheckbox={props.onClickCheckbox}
+          checked={coworker.checked}
         />
        )
     })

@@ -1,4 +1,4 @@
-import Row from "../Row/Row";
+import Row from '../Row/Row';
 
 const ListCompanies = props => {
   return (

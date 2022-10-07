@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import ListCompanies from '../ListCompanies/ListCompanies';
 import ListCoworkers from '../ListCoworkers/ListCoworkers';
@@ -34,6 +35,7 @@ const Main = props => {
       >
         <ListCoworkers
           coworkers={selectedCoworkers}
+          onClickCheckbox={props.onClickCheckboxCoworker}
         />
       </Table>
     </main>
