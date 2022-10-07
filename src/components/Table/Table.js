@@ -6,6 +6,10 @@ import './Table.css';
 const Table = props => {
   // получаем данные из store
   const selectedCoworkers = useSelector(store => store.selectedCoworkers.selectedCoworkers);
+  const companies = useSelector(store => store.companies.companies);
+
+  // значение чекбокса
+  const isChecked = props.tableName === 'coworkers' ? selectedCoworkers.every(el => el.checked) : companies.every(el => el.checked);
 
   return (
     <section className={`table ${selectedCoworkers.length === 0 && props.tableName === 'coworkers' ? 'table_hidden' : ''}`}>
@@ -23,6 +27,7 @@ const Table = props => {
         editingThirdCell={true}
         editingFourthCell={true}
         onClickCheckbox={props.onClickCheckbox}
+        checked={isChecked}
       />
       {/* Данные таблицы */}
       {props.children}

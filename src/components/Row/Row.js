@@ -12,7 +12,7 @@ const Row = props => {
     }
 
     if (props.labelText === 'Выделить всё') {
-      props.onClickCheckbox(props.formName);
+      props.onClickCheckbox(props.checked);
     }
   }
 

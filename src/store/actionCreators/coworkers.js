@@ -24,3 +24,27 @@ export const checkCoworker = (coworkers, coworker) => {
     }),
   }
 }
+
+// функция установки флажка в чекбокс "Выделить всё"
+export const checkAllCoworkers = coworkers => {
+  return {
+    type: coworkersActionTypes.CHECK_ALL_COWORKERS,
+    payload: coworkers.map(el => {
+      el.checked = true;
+
+      return el;
+    }),
+  }
+}
+
+// функция удаления флажка в чекбоксе "Выделить всё"
+export const uncheckAllCoworkers = coworkers => {
+  return {
+    type: coworkersActionTypes.UNCHECK_ALL_COWORKERS,
+    payload: coworkers.map(el => {
+      el.checked = false;
+
+      return el;
+    }),
+  }
+}

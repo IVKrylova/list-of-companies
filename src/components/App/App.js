@@ -14,6 +14,8 @@ import {
 import {
   getCoworkers,
   checkCoworker,
+  checkAllCoworkers,
+  uncheckAllCoworkers,
 } from '../../store/actionCreators/coworkers';
 import {
   addCompanieToChecked,
@@ -30,6 +32,8 @@ import {
 import {
   addCoworkerToChecked,
   deleteCoworkerFromChecked,
+  addAllCoworkersToChecked,
+  deleteAllCoworkersFromChecked,
 } from '../../store/actionCreators/checkedCoworkers';
 
 const App = _ => {
@@ -93,8 +97,8 @@ const App = _ => {
   }
 
   // обработчик клика по чекбоксу в шапке таблицы компаний
-  const handleClickCheckboxAllCompanies = tableName => {
-    if (tableName === 'companies' && checkedCompanies.length !== companies.length) {
+  const handleClickCheckboxAllCompanies = isChecked => {
+    if (!isChecked) {
       // добавляем компании в массив выбранных
       dispatch(addAllCompaniesToChecked(companies));
       // устанавливаем флаг в чекбоксе
@@ -102,13 +106,29 @@ const App = _ => {
       // показываем массив с сотрудниками
       dispatch(addAllCoworkers(coworkers))
     }
-    if (tableName === 'companies' && checkedCompanies.length === companies.length) {
+    if (isChecked) {
       // удаляем компании из массива выбранных
       dispatch(deleteAllCompaniesToChecked(companies));
       // удаляем флаг в чекбоксе
       dispatch(uncheckAllCompanie(companies));
       // очищаем массив с сотрудниками
       dispatch(deleteAllCoworkers(coworkers));
+    }
+  }
+
+  // обработчик клика по чекбоксу в шапке таблицы сотрудников
+  const handleClickCheckboxAllCoworkers = isChecked => {
+    if (!isChecked) {
+      // устанавливаем флаг в чекбоксе
+      dispatch(checkAllCoworkers(selectedCoworkers));
+      // добавляем сотрудников в массив выбранных
+      dispatch(addAllCoworkersToChecked(selectedCoworkers));
+    }
+    if (isChecked) {
+      // удаляем флаг в чекбоксе
+      dispatch(uncheckAllCoworkers(selectedCoworkers));
+      // удаляем сотрудников из массива выбранных
+      dispatch(deleteAllCoworkersFromChecked(checkedCoworkers));
     }
   }
 
@@ -119,6 +139,7 @@ const App = _ => {
         onClickCheckboxCompanie={handleClickCheckboxCompanie}
         onClickCheckboxCoworker={handleClickCheckboxCoworker}
         onClickCheckboxAllCompanies={handleClickCheckboxAllCompanies}
+        onClickCheckboxAllCoworkers={handleClickCheckboxAllCoworkers}
       />
       <Footer />
     </div>

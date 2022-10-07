@@ -27,7 +27,7 @@ export const addAllCoworkers = coworkers => {
 // функция удаления всех сотрудников из массива
 export const deleteAllCoworkers = coworkers => {
   return {
-    type: selectedCoworkersActionTypes.DELETE_COWORKERS,
+    type: selectedCoworkersActionTypes.DELETE_ALL_COWORKERS,
     payload: [],
   }
 }
