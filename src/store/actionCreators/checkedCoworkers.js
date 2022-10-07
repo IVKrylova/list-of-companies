@@ -19,7 +19,7 @@ export const deleteCoworkerFromChecked = (checkedCoworkers, coworker) => {
 // функция добавления всех сотрудников в массив выбранных
 export const addAllCoworkersToChecked = coworkers => {
   return {
-    type: checkedCoworkersActionTypes.ADD_ALL_COWORKERS,
+    type: checkedCoworkersActionTypes.ADD_ALL_CHECKED_COWORKERS,
     payload: coworkers,
   }
 }
@@ -27,7 +27,7 @@ export const addAllCoworkersToChecked = coworkers => {
 // функция удаления всех сотрудников из массива выбранных
 export const deleteAllCoworkersFromChecked = checkedCoworkers => {
   return {
-    type: checkedCoworkersActionTypes.DELETE_ALL,
+    type: checkedCoworkersActionTypes.DELETE_ALL_CHECKED_COWORKERS,
     payload: [],
   }
 }

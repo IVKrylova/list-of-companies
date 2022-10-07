@@ -16,12 +16,12 @@ export const checkedCoworkersReduser = (state = initialState, action) => {
         ...state,
         checkedCoworkers: action.payload,
       };
-    case checkedCoworkersActionTypes.ADD_ALL_COWORKERS:
+    case checkedCoworkersActionTypes.ADD_ALL_CHECKED_COWORKERS:
       return {
         ...state,
         checkedCoworkers: action.payload,
       };
-    case checkedCoworkersActionTypes.DELETE_ALL:
+    case checkedCoworkersActionTypes.DELETE_ALL_CHECKED_COWORKERS:
       return {
         ...state,
         checkedCoworkers: action.payload,
