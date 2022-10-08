@@ -38,6 +38,22 @@ class MainApi {
     })
     .then(checkResponse)
   }
+
+  // метод обновления данных сотрудника
+  updateCoworker(data) {
+    return fetch(`${this.baseUrl}/coworkers/${data.id}`, {
+      method: 'PUT',
+      headers: this.headers,
+      body: JSON.stringify({
+        name: data.name,
+        lastname: data.lastname,
+        id: data.id,
+        position: data.position,
+        company: data.company,
+      })
+    })
+    .then(checkResponse)
+  }
 }
 
 export const mainApi = new MainApi(mainOptions);

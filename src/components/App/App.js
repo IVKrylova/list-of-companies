@@ -43,7 +43,8 @@ const App = _ => {
   const coworkers = useSelector(store => store.coworkers.coworkers);
   const selectedCoworkers = useSelector(store => store.selectedCoworkers.selectedCoworkers);
   const checkedCoworkers = useSelector(store => store.checkedCoworkers.checkedCoworkers);
-  const updatingCompany = useSelector(store => store.updatingCompany.data)
+  const updatingCompany = useSelector(store => store.updatingCompany.data);
+  const updatingCoworker = useSelector(store => store.updatingCoworker.data);
 
   const dispatch = useDispatch();
 
@@ -145,6 +146,18 @@ const App = _ => {
       .catch(err => console.log(err));
   }
 
+  // обработстк изменения данных в таблице сотрудников
+  const handleUpdateCoworker = evt => {
+    evt.preventDefault();
+
+    mainApi.updateCoworker(updatingCoworker)
+      .then(_ => {
+        mainApi.getCoworkers()
+          .then(res => dispatch(getCoworkers(res)))
+      })
+      .catch(err => console.log(err));
+  }
+
   return (
     <div className="App">
       <Header />
@@ -154,6 +167,7 @@ const App = _ => {
         onClickCheckboxAllCompanies={handleClickCheckboxAllCompanies}
         onClickCheckboxAllCoworkers={handleClickCheckboxAllCoworkers}
         onUpdateCompany={handleUpdateCompany}
+        onUpdateCoworker={handleUpdateCoworker}
       />
       <Footer />
     </div>

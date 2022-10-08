@@ -19,6 +19,9 @@ const ListCoworkers = props => {
           coworker={coworker}
           onClickCheckbox={props.onClickCheckbox}
           checked={coworker.checked}
+          nameSecondCell='lastname'
+          nameThirdCell='name'
+          nameFourthCell='position'
         />
        )
     })

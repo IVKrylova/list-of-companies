@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { updateCompany } from '../../store/actionCreators/updatingCompany';
+import { updateCoworker } from '../../store/actionCreators/updatingCoworker';
 import './Row.css';
 
 const Row = props => {
@@ -26,7 +27,20 @@ const Row = props => {
 
   // установка начального значения стейтов ячеек
   useEffect(_ => {
-    props.companie && setValues({ name: props.companie.name, address: props.companie.address, id: props.companie.id });
+    props.companie && setValues({
+      name: props.companie.name,
+      address: props.companie.address,
+      id: props.companie.id
+    });
+
+    props.coworker && setValues({
+      id: props.coworker.id,
+      name: props.coworker.name,
+      lastname: props.coworker.lastname,
+      position: props.coworker.position,
+      company: props.coworker.company,
+    });
+
   }, []);
 
   // обработчик изменения ячейки
@@ -39,6 +53,7 @@ const Row = props => {
   // сохраняем значения в store
   useEffect(_ => {
     props.companie && dispatch(updateCompany(values));
+    props.coworker && dispatch(updateCoworker(values));
   }, [values])
 
   return (
