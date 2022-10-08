@@ -37,14 +37,15 @@ import {
 } from '../../store/actionCreators/checkedCoworkers';
 
 const App = _ => {
-  const dispatch = useDispatch();
-
   // получаем данные из store
   const companies = useSelector(store => store.companies.companies);
   const checkedCompanies = useSelector(store => store.checkedCompanies.checkedCompanies);
   const coworkers = useSelector(store => store.coworkers.coworkers);
   const selectedCoworkers = useSelector(store => store.selectedCoworkers.selectedCoworkers);
   const checkedCoworkers = useSelector(store => store.checkedCoworkers.checkedCoworkers);
+  const updatingCompany = useSelector(store => store.updatingCompany.data)
+
+  const dispatch = useDispatch();
 
   // получаем компании при загрузке страницы
   useEffect(_ => {
@@ -132,6 +133,18 @@ const App = _ => {
     }
   }
 
+  // обработчик изменения данных в таблице компаний
+  const handleUpdateCompany = evt => {
+    evt.preventDefault();
+
+    mainApi.updateCompanie(updatingCompany)
+      .then(_ => {
+        mainApi.getCompanies()
+          .then(res => dispatch(getCompanies(res)))
+      })
+      .catch(err => console.log(err));
+  }
+
   return (
     <div className="App">
       <Header />
@@ -140,6 +153,7 @@ const App = _ => {
         onClickCheckboxCoworker={handleClickCheckboxCoworker}
         onClickCheckboxAllCompanies={handleClickCheckboxAllCompanies}
         onClickCheckboxAllCoworkers={handleClickCheckboxAllCoworkers}
+        onUpdateCompany={handleUpdateCompany}
       />
       <Footer />
     </div>

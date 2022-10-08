@@ -6,23 +6,26 @@ const ListCompanies = props => {
   const coworkers = useSelector(store => store.coworkers.coworkers);
 
   return (
-    props.companies && props.companies.map(companie => {
+    props.companies && props.companies.map(company => {
       return (
         <Row
-          key={companie.id}
-          formName={companie.name}
+          key={company.id}
+          formName={company.name}
           editingSecondCell={false}
-          secondCell={companie.name}
+          secondCell={company.name}
           editingThirdCell={true}
-          thirdCell={coworkers.filter(el => el.company === companie.name).length}
+          thirdCell={coworkers.filter(el => el.company === company.name).length}
           editingFourthCell={false}
-          fourthCell={companie.address}
+          fourthCell={company.address}
           isHiddenButtonSave={false}
           isHiddenButtonDelete={false}
           isHiddenButtonAdd={true}
-          checked={companie.checked}
+          checked={company.checked}
           onClickCheckbox={props.onClickCheckbox}
-          companie={companie}
+          companie={company}
+          nameSecondCell='name'
+          nameThirdCell='count'
+          nameFourthCell='address'
         />
        )
     })

@@ -14,7 +14,7 @@ const Table = props => {
   return (
     <section className={`table ${selectedCoworkers.length === 0 && props.tableName === 'coworkers' ? 'table_hidden' : ''}`}>
       <h2 className='table__title'>{props.title}</h2>
-      <form className='form' id={props.tableName} name={props.tableName}>
+      <form className='form' id={props.tableName} name={props.tableName} onSubmit={props.onSubmitForm}>
       {/* Шапка таблицы */}
       <Row
         formName={props.tableName}
@@ -34,14 +34,16 @@ const Table = props => {
       <ul className='buttons'>
         <li>
           <Button
-            disabled={true}
+            disabled={false}
             buttonText='Сохранить'
+            type='submit'
           />
         </li>
         <li>
           <Button
             disabled={!props.isChecked}
             buttonText='Удалить'
+            type='button'
           />
         </li>
       </ul>
@@ -61,6 +63,7 @@ const Table = props => {
         <Button
           disabled={true}
           buttonText='Добавить'
+          type='submit'
         />
       </form>
     </section>

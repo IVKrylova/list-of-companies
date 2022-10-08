@@ -20,6 +20,7 @@ const Main = props => {
         fourthColumn='Адрес'
         isChecked={!!checkedCompanies.length}
         onClickCheckbox={props.onClickCheckboxAllCompanies}
+        onSubmitForm={props.onUpdateCompany}
       >
         <ListCompanies
           companies={companies}
@@ -33,6 +34,7 @@ const Main = props => {
         thirdColumn='Имя'
         fourthColumn='Должность'
         onClickCheckbox={props.onClickCheckboxAllCoworkers}
+        onSubmitForm={props.onSubmitForm}
       >
         <ListCoworkers
           coworkers={selectedCoworkers}

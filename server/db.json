@@ -1,111 +1,125 @@
 {
-  "companies": [{
-    "id": 1,
-    "name": "Rendering",
-    "address": "г. Москва, пр. Ленина, д.1"
-  }, {
-    "id": 2,
-    "name": "Ideas",
-    "address": "г. Омск, пр. Ленина, д.1"
-  }, {
-    "id": 3,
-    "name": "Base",
-    "address": "г. Томск, пр. Ленина, д.1"
-  }],
-  "coworkers": [{
-    "id": 1,
-    "name": "Иван",
-    "lastname": "Иванов",
-    "position": "Frontend-разработчик",
-    "company": "Rendering",
-    "idCompany": "1"
-  }, {
-    "id": 2,
-    "name": "Иван",
-    "lastname": "Иванов",
-    "position": "Дизайнер",
-    "company": "Ideas",
-    "idCompany": "2"
-  }, {
-    "id": 3,
-    "name": "Иван",
-    "lastname": "Иванов",
-    "position": "Тестировщик",
-    "company": "Base",
-    "idCompany": "3"
-  },
-  {
-    "id": 4,
-    "name": "Иван",
-    "lastname": "Иванов",
-    "position": "Frontend-разработчик",
-    "company": "Rendering",
-    "idCompany": "1"
-  }, {
-    "id": 5,
-    "name": "Иван",
-    "lastname": "Иванов",
-    "position": "Дизайнер",
-    "company": "Ideas",
-    "idCompany": "2"
-  }, {
-    "id": 6,
-    "name": "Иван",
-    "lastname": "Иванов",
-    "position": "Тестировщик",
-    "company": "Base",
-    "idCompany": "3"
-  },
-  {
-    "id": 7,
-    "name": "Иван",
-    "lastname": "Иванов",
-    "position": "Frontend-разработчик",
-    "company": "Rendering",
-    "idCompany": "1"
-  }, {
-    "id": 8,
-    "name": "Иван",
-    "lastname": "Иванов",
-    "position": "Дизайнер",
-    "company": "Ideas",
-    "idCompany": "2"
-  }, {
-    "id": 9,
-    "name": "Иван",
-    "lastname": "Иванов",
-    "position": "Тестировщик",
-    "company": "Base",
-    "idCompany": "3"
-  },
-  {
-    "id": 10,
-    "name": "Иван",
-    "lastname": "Иванов",
-    "position": "Frontend-разработчик",
-    "company": "Rendering",
-    "idCompany": "1"
-  }, {
-    "id": 11,
-    "name": "Иван",
-    "lastname": "Иванов",
-    "position": "Дизайнер",
-    "company": "Ideas",
-    "idCompany": "2"
-  }, {
-    "id": 12,
-    "name": "Иван",
-    "lastname": "Иванов",
-    "position": "Тестировщик",
-    "company": "Base",
-    "idCompany": "3"
-  },
-  {
-    "id": 13,
-    "name": "Иван",
-    "lastname": "Иванов",
-    "position": "Тестировщик",
-    "company": "Base",
-    "idCompany": "3"
-  }]
+  "companies": [
+    {
+      "id": 1,
+      "name": "Rendering",
+      "address": "г. Москва, пр. Ленина, д.1"
+    },
+    {
+      "name": "Ideas",
+      "address": "г. Омск, пр. Ленина, д.3",
+      "id": 2
+    },
+    {
+      "id": 3,
+      "name": "Base",
+      "address": "г. Томск, пр. Ленина, д.1"
+    }
+  ],
+  "coworkers": [
+    {
+      "id": 1,
+      "name": "Иван",
+      "lastname": "Иванов",
+      "position": "Frontend-разработчик",
+      "company": "Rendering",
+      "idCompany": "1"
+    },
+    {
+      "id": 2,
+      "name": "Иван",
+      "lastname": "Иванов",
+      "position": "Дизайнер",
+      "company": "Ideas",
+      "idCompany": "2"
+    },
+    {
+      "id": 3,
+      "name": "Иван",
+      "lastname": "Иванов",
+      "position": "Тестировщик",
+      "company": "Base",
+      "idCompany": "3"
+    },
+    {
+      "id": 4,
+      "name": "Иван",
+      "lastname": "Иванов",
+      "position": "Frontend-разработчик",
+      "company": "Rendering",
+      "idCompany": "1"
+    },
+    {
+      "id": 5,
+      "name": "Иван",
+      "lastname": "Иванов",
+      "position": "Дизайнер",
+      "company": "Ideas",
+      "idCompany": "2"
+    },
+    {
+      "id": 6,
+      "name": "Иван",
+      "lastname": "Иванов",
+      "position": "Тестировщик",
+      "company": "Base",
+      "idCompany": "3"
+    },
+    {
+      "id": 7,
+      "name": "Иван",
+      "lastname": "Иванов",
+      "position": "Frontend-разработчик",
+      "company": "Rendering",
+      "idCompany": "1"
+    },
+    {
+      "id": 8,
+      "name": "Иван",
+      "lastname": "Иванов",
+      "position": "Дизайнер",
+      "company": "Ideas",
+      "idCompany": "2"
+    },
+    {
+      "id": 9,
+      "name": "Иван",
+      "lastname": "Иванов",
+      "position": "Тестировщик",
+      "company": "Base",
+      "idCompany": "3"
+    },
+    {
+      "id": 10,
+      "name": "Иван",
+      "lastname": "Иванов",
+      "position": "Frontend-разработчик",
+      "company": "Rendering",
+      "idCompany": "1"
+    },
+    {
+      "id": 11,
+      "name": "Иван",
+      "lastname": "Иванов",
+      "position": "Дизайнер",
+      "company": "Ideas",
+      "idCompany": "2"
+    },
+    {
+      "id": 12,
+      "name": "Иван",
+      "lastname": "Иванов",
+      "position": "Тестировщик",
+      "company": "Base",
+      "idCompany": "3"
+    },
+    {
+      "id": 13,
+      "name": "Иван",
+      "lastname": "Иванов",
+      "position": "Тестировщик",
+      "company": "Base",
+      "idCompany": "3"
+    }
+  ]
 }

@@ -11,7 +11,7 @@ class MainApi {
   getCompanies() {
     return fetch(`${this.baseUrl}/companies`, {
       method: 'GET',
-      headers: this.headers
+      headers: this.headers,
     })
     .then(checkResponse)
   }
@@ -20,7 +20,21 @@ class MainApi {
   getCoworkers() {
     return fetch(`${this.baseUrl}/coworkers`, {
       method: 'GET',
-      headers: this.headers
+      headers: this.headers,
+    })
+    .then(checkResponse)
+  }
+
+  // метод обновления данных компании
+  updateCompanie(data) {
+    return fetch(`${this.baseUrl}/companies/${data.id}`, {
+      method: 'PUT',
+      headers: this.headers,
+      body: JSON.stringify({
+        name: data.name,
+        address: data.address,
+        id: data.id,
+      })
     })
     .then(checkResponse)
   }
