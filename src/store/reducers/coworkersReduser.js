@@ -26,6 +26,11 @@ export const coworkersReducer = (state = initialState, action) => {
           ...state,
           coworkers: action.payload,
       };
+      case coworkersActionTypes.ADD_NEW_COWORKER_TO_STORE:
+        return {
+          ...state,
+          coworkers: action.payload,
+      };
     default:
       return state;
   }

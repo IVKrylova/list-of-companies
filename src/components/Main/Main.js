@@ -36,6 +36,7 @@ const Main = props => {
         fourthColumn='Должность'
         onClickCheckbox={props.onClickCheckboxAllCoworkers}
         onSubmitForm={props.onUpdateCoworker}
+        addNewCoworker={props.addNewCoworker}
       >
         <ListCoworkers
           coworkers={selectedCoworkers}

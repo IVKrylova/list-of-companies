@@ -67,6 +67,21 @@ class MainApi {
     })
     .then(checkResponse)
   }
+
+  // метод добавления нового сотрудника
+  addCoworker(data) {
+    return fetch(`${this.baseUrl}/coworkers`, {
+      method: 'POST',
+      headers: this.headers,
+      body: JSON.stringify({
+        name: data.name,
+        lastname: data.lastname,
+        company: data.company,
+        position: data.position,
+      })
+    })
+    .then(checkResponse)
+  }
 }
 
 export const mainApi = new MainApi(mainOptions);

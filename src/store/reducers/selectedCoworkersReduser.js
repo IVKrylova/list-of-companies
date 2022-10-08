@@ -26,6 +26,11 @@ export const selectedCoworkersReduser = (state = initialState, action) => {
         ...state,
         selectedCoworkers: action.payload,
       };
+    case selectedCoworkersActionTypes.ADD_COWORKER_TO_TABLE:
+      return {
+        ...state,
+        selectedCoworkers: action.payload,
+      };
     default:
       return state;
   }

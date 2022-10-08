@@ -2,6 +2,7 @@ import { useSelector } from 'react-redux';
 import Row from '../Row/Row';
 import Button from '../Button/Button';
 import TableAddCompany from '../TableAddCompany/TableAddCompany';
+import TableAddCoworker from '../TableAddCoworker/TableAddCoworker';
 import './Table.css';
 
 const Table = props => {
@@ -53,27 +54,10 @@ const Table = props => {
         ? <TableAddCompany
           addNewCompany={props.addNewCompany}
         />
-        : <TableAddCompany />
+        : <TableAddCoworker
+          addNewCoworker={props.addNewCoworker}
+        />
       }
-
-      {/* {/* Строка для добавления данных
-      <form>
-        <Row
-          formName={`add-${props.tableName}`}
-          cellClassModifier='row__cell_adding'
-          secondCell=''
-          thirdCell=''
-          fourthCell=''
-          editingSecondCell={false}
-          editingThirdCell={false}
-          editingFourthCell={false}
-        />
-        <Button
-          disabled={true}
-          buttonText='Добавить'
-          type='submit'
-        />
-      </form> */}
     </section>
   );
 }

@@ -17,6 +17,7 @@ import {
   checkCoworker,
   checkAllCoworkers,
   uncheckAllCoworkers,
+  addNewCoworkerToStore,
 } from '../../store/actionCreators/coworkers';
 import {
   addCompanieToChecked,
@@ -29,6 +30,7 @@ import {
   deleteCoworkers,
   addAllCoworkers,
   deleteAllCoworkers,
+  addNewCoworkerToTable,
 } from '../../store/actionCreators/selectedCoworkers';
 import {
   addCoworkerToChecked,
@@ -47,6 +49,7 @@ const App = _ => {
   const updatingCompany = useSelector(store => store.updatingCompany.data);
   const updatingCoworker = useSelector(store => store.updatingCoworker.data);
   const newCompany = useSelector(store => store.newCompany.company);
+  const newCoworker = useSelector(store => store.newCoworker.coworker);
 
   const dispatch = useDispatch();
 
@@ -172,6 +175,21 @@ const App = _ => {
       .catch(err => console.log(err));
   }
 
+  // обработчик добавления нового сотрудника
+  const handleAddNewCoworker = evt => {
+    evt.preventDefault();
+
+    mainApi.addCoworker(newCoworker)
+      .then(res => {
+        res.checked = false;
+
+        dispatch(addNewCoworkerToStore(coworkers, res));
+        if (selectedCoworkers.some(el => el.company === res.company))
+          dispatch(addNewCoworkerToTable(selectedCoworkers, res));
+      })
+      .catch(err => console.log(err));
+  }
+
   return (
     <div className="App">
       <Header />
@@ -183,6 +201,7 @@ const App = _ => {
         onUpdateCompany={handleUpdateCompany}
         onUpdateCoworker={handleUpdateCoworker}
         addNewCompany={handleAddNewCompany}
+        addNewCoworker={handleAddNewCoworker}
       />
       <Footer />
     </div>

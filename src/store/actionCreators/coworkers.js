@@ -48,3 +48,12 @@ export const uncheckAllCoworkers = coworkers => {
     }),
   }
 }
+
+// функция добавления нового сотрудника
+export const addNewCoworkerToStore = (coworkers, coworker) => {
+  return {
+    type: coworkersActionTypes.ADD_NEW_COWORKER_TO_STORE,
+    payload: [ ...coworkers, coworker ],
+  }
+}
+

@@ -31,3 +31,11 @@ export const deleteAllCoworkers = coworkers => {
     payload: [],
   }
 }
+
+// функция добавления нового сотрудника в таблицу
+export const addNewCoworkerToTable = (coworkers, coworker) => {
+  return {
+    type: selectedCoworkersActionTypes.ADD_COWORKER_TO_TABLE,
+    payload: [ ...coworkers, coworker ],
+  }
+}
