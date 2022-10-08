@@ -48,3 +48,11 @@ export const uncheckAllCompanie = companies => {
     }),
   }
 }
+
+// функция добавления новой компании
+export const addNewCompanyToStore = (companies, company) => {
+  return {
+    type: companiesActionTypes.ADD_NEW_COMPANY_TO_COMPANIES,
+    payload: [ ...companies, company ],
+  }
+}

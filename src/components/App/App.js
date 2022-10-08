@@ -10,6 +10,7 @@ import {
   checkCompanie,
   checkAllCompanie,
   uncheckAllCompanie,
+  addNewCompanyToStore,
 } from '../../store/actionCreators/companies';
 import {
   getCoworkers,
@@ -45,6 +46,7 @@ const App = _ => {
   const checkedCoworkers = useSelector(store => store.checkedCoworkers.checkedCoworkers);
   const updatingCompany = useSelector(store => store.updatingCompany.data);
   const updatingCoworker = useSelector(store => store.updatingCoworker.data);
+  const newCompany = useSelector(store => store.newCompany.company);
 
   const dispatch = useDispatch();
 
@@ -146,7 +148,7 @@ const App = _ => {
       .catch(err => console.log(err));
   }
 
-  // обработстк изменения данных в таблице сотрудников
+  // обработчик изменения данных в таблице сотрудников
   const handleUpdateCoworker = evt => {
     evt.preventDefault();
 
@@ -154,6 +156,18 @@ const App = _ => {
       .then(_ => {
         mainApi.getCoworkers()
           .then(res => dispatch(getCoworkers(res)))
+      })
+      .catch(err => console.log(err));
+  }
+
+  // обработчик добавления новой компании
+  const handleAddNewCompany = evt => {
+    evt.preventDefault();
+
+    mainApi.addCompany(newCompany)
+      .then(res => {
+        res.checked = false;
+        dispatch(addNewCompanyToStore(companies, res));
       })
       .catch(err => console.log(err));
   }
@@ -168,6 +182,7 @@ const App = _ => {
         onClickCheckboxAllCoworkers={handleClickCheckboxAllCoworkers}
         onUpdateCompany={handleUpdateCompany}
         onUpdateCoworker={handleUpdateCoworker}
+        addNewCompany={handleAddNewCompany}
       />
       <Footer />
     </div>

@@ -1,6 +1,7 @@
 import { useSelector } from 'react-redux';
 import Row from '../Row/Row';
 import Button from '../Button/Button';
+import TableAddCompany from '../TableAddCompany/TableAddCompany';
 import './Table.css';
 
 const Table = props => {
@@ -48,7 +49,14 @@ const Table = props => {
         </li>
       </ul>
       </form>
-      {/* Строка для добавления данных */}
+      {props.tableName === 'companies'
+        ? <TableAddCompany
+          addNewCompany={props.addNewCompany}
+        />
+        : <TableAddCompany />
+      }
+
+      {/* {/* Строка для добавления данных
       <form>
         <Row
           formName={`add-${props.tableName}`}
@@ -65,7 +73,7 @@ const Table = props => {
           buttonText='Добавить'
           type='submit'
         />
-      </form>
+      </form> */}
     </section>
   );
 }

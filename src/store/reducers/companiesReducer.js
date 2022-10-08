@@ -26,6 +26,11 @@ export const companiesReducer = (state = initialState, action) => {
           ...state,
           companies: action.payload,
         };
+      case companiesActionTypes.ADD_NEW_COMPANY_TO_COMPANIES:
+        return {
+          ...state,
+          companies: action.payload,
+        }
     default:
       return state;
   }

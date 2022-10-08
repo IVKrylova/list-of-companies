@@ -21,6 +21,7 @@ const Main = props => {
         isChecked={!!checkedCompanies.length}
         onClickCheckbox={props.onClickCheckboxAllCompanies}
         onSubmitForm={props.onUpdateCompany}
+        addNewCompany={props.addNewCompany}
       >
         <ListCompanies
           companies={companies}

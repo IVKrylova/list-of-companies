@@ -14,6 +14,26 @@
       "name": "Base",
       "address": "г. Томск, пр. Ленина, д.1",
       "id": 3
+    },
+    {
+      "name": "Line",
+      "address": "ул. Заломова, 15",
+      "id": 4
+    },
+    {
+      "name": "Baikal",
+      "address": "ул. Заломова, 15",
+      "id": 5
+    },
+    {
+      "name": "Ivanovo",
+      "address": "ул. Заломова, 15",
+      "id": 6
+    },
+    {
+      "name": "Baikal",
+      "address": "ул. Заломова, 15",
+      "id": 7
     }
   ],
   "coworkers": [

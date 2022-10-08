@@ -54,6 +54,19 @@ class MainApi {
     })
     .then(checkResponse)
   }
+
+  // метод добавления новой компании
+  addCompany(data) {
+    return fetch(`${this.baseUrl}/companies`, {
+      method: 'POST',
+      headers: this.headers,
+      body: JSON.stringify({
+        name: data.name,
+        address: data.address,
+      })
+    })
+    .then(checkResponse)
+  }
 }
 
 export const mainApi = new MainApi(mainOptions);
