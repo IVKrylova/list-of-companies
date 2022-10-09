@@ -56,3 +56,11 @@ export const addNewCoworkerToStore = (coworkers, coworker) => {
     payload: [ ...coworkers, coworker ],
   }
 }
+
+// функция удаления компании
+export const deleteCoworkerFromStore = coworkers => {
+  return {
+    type: coworkersActionTypes.DELETE_COWORKER_FROM_STORE,
+    payload: coworkers.filter(el => el.checked === false),
+  }
+}

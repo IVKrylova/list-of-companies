@@ -19,6 +19,7 @@ import {
   checkAllCoworkers,
   uncheckAllCoworkers,
   addNewCoworkerToStore,
+  deleteCoworkerFromStore,
 } from '../../store/actionCreators/coworkers';
 import {
   addCompanieToChecked,
@@ -32,6 +33,7 @@ import {
   addAllCoworkers,
   deleteAllCoworkers,
   addNewCoworkerToTable,
+  deleteCoworkersFromTable,
 } from '../../store/actionCreators/selectedCoworkers';
 import {
   addCoworkerToChecked,
@@ -200,6 +202,7 @@ const App = _ => {
     // удаляем компании из таблицы
     dispatch(deleteCompanyFromStore(companies));
 
+    // удаляем сотрудников из удаленных компаний
     checkedCompanies.forEach(el => {
       coworkers.forEach(coworker => {
         if (el.name === coworker.company) {
@@ -216,7 +219,16 @@ const App = _ => {
 
   // обработчик удаления сотрудника
   const handleClickDeleteCoworker = _ => {
+    checkedCoworkers.forEach(el => {
+      mainApi.deleteCoworker(el.id).catch(err => console.log(err));
+    });
 
+    // удаляем сотрудников из store
+    dispatch(deleteCoworkerFromStore(coworkers));
+    // очищаем массив выбранных сотрудников
+    dispatch(deleteAllCoworkersFromChecked(selectedCoworkers));
+    // удаляем сотрудников из таблицы
+    dispatch(deleteCoworkersFromTable(selectedCoworkers));
   }
 
   return (

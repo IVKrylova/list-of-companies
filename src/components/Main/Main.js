@@ -9,6 +9,7 @@ const Main = props => {
   const companies = useSelector(store => store.companies.companies);
   const selectedCoworkers = useSelector(store => store.selectedCoworkers.selectedCoworkers);
   const checkedCompanies = useSelector(store => store.checkedCompanies.checkedCompanies);
+  const checkedCoworkers = useSelector(store => store.checkedCoworkers.checkedCoworkers);
 
   return (
     <main className='content'>
@@ -39,6 +40,7 @@ const Main = props => {
         onSubmitForm={props.onUpdateCoworker}
         addNewCoworker={props.addNewCoworker}
         onClickButtonDelete={props.onClickDeleteCoworker}
+        isChecked={!!checkedCoworkers.length}
       >
         <ListCoworkers
           coworkers={selectedCoworkers}

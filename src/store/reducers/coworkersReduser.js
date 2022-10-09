@@ -31,6 +31,11 @@ export const coworkersReducer = (state = initialState, action) => {
           ...state,
           coworkers: action.payload,
       };
+      case coworkersActionTypes.DELETE_COWORKER_FROM_STORE:
+        return {
+          ...state,
+          coworkers: action.payload,
+      };
     default:
       return state;
   }

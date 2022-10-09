@@ -9,6 +9,11 @@
       "name": "Base",
       "address": "г. Томск, пр. Ленина, д.1",
       "id": 3
+    },
+    {
+      "name": "Ivanovo",
+      "address": "ул. Заломова, 15",
+      "id": 4
     }
   ],
   "coworkers": [
@@ -74,6 +79,13 @@
       "lastname": "Иванов",
       "position": "Тестировщик",
       "company": "Base"
+    },
+    {
+      "name": "Ирина",
+      "lastname": "Крылова",
+      "company": "Ivanovo",
+      "position": "Ирина",
+      "id": 14
     }
   ]
 }

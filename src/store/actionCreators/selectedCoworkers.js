@@ -39,3 +39,11 @@ export const addNewCoworkerToTable = (coworkers, coworker) => {
     payload: [ ...coworkers, coworker ],
   }
 }
+
+//функция удаления сотрудников из таблицы
+export const deleteCoworkersFromTable = coworkers => {
+  return {
+    type: selectedCoworkersActionTypes.DELETE_COWORKES_FROM_TABLE,
+    payload: coworkers.filter(el => el.checked === false),
+  }
+}
