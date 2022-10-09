@@ -1,0 +1,18 @@
+.table_hidden {
+  display: none;
+}
+
+.table__title {
+  margin: 0;
+  font-size: 18px;
+  width: 100%;
+  text-align: center;
+}
+
+.buttons {
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  column-gap: 20px;
+  margin: 0;
+}

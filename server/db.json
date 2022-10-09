@@ -1,0 +1,319 @@
+{
+  "companies": [
+    {
+      "name": "Base",
+      "address": "г. Томск, пр. Ленина, д.1",
+      "id": 3
+    },
+    {
+      "name": "Baikal",
+      "address": "г. Москва, ул. Заломова, д.5",
+      "id": 4
+    },
+    {
+      "name": "Ideas",
+      "address": "г. Москва, ул. Ленина, д.5",
+      "id": 5
+    },
+    {
+      "name": "Ivanovo",
+      "address": "г. Томск, ул. Мира, д.1",
+      "id": 6
+    },
+    {
+      "name": "Link",
+      "address": "ул. Заломова, 15",
+      "id": 7
+    },
+    {
+      "name": "Line",
+      "address": "г. Томск, ул. Мира, д.1",
+      "id": 8
+    },
+    {
+      "name": "Test",
+      "address": "г. Томск, ул. Мира, д.1",
+      "id": 9
+    },
+    {
+      "name": "Slot",
+      "address": "г. Томск, ул. Мира, д.1",
+      "id": 10
+    },
+    {
+      "name": "Oka",
+      "address": "г. Томск, ул. Мира, д.1",
+      "id": 11
+    },
+    {
+      "name": "Ocean",
+      "address": "г. Томск, ул. Мира, д.1",
+      "id": 12
+    },
+    {
+      "name": "River",
+      "address": "г. Томск, ул. Мира, д.1",
+      "id": 13
+    },
+    {
+      "name": "Blank",
+      "address": "г. Томск, ул. Мира, д.1",
+      "id": 14
+    },
+    {
+      "name": "Moon",
+      "address": "г. Томск, ул. Мира, д.1",
+      "id": 15
+    },
+    {
+      "name": "Word",
+      "address": "г. Томск, ул. Мира, д.1",
+      "id": 16
+    },
+    {
+      "name": "Shadow",
+      "address": "г. Томск, ул. Мира, д.1",
+      "id": 17
+    },
+    {
+      "name": "Dream",
+      "address": "г. Томск, ул. Мира, д.1",
+      "id": 18
+    },
+    {
+      "name": "Village",
+      "address": "г. Томск, ул. Мира, д.1",
+      "id": 19
+    },
+    {
+      "name": "Valley",
+      "address": "г. Томск, ул. Мира, д.1",
+      "id": 20
+    },
+    {
+      "name": "World",
+      "address": "г. Томск, ул. Мира, д.1",
+      "id": 21
+    },
+    {
+      "name": "Red Car",
+      "address": "г. Томск, ул. Мира, д.1",
+      "id": 22
+    },
+    {
+      "name": "Volcano",
+      "address": "ул. Заломова, д. 8",
+      "id": 23
+    },
+    {
+      "name": "Sky",
+      "address": "г. Павлово, ул. Мира, д.4",
+      "id": 24
+    }
+  ],
+  "coworkers": [
+    {
+      "id": 3,
+      "name": "Иван",
+      "lastname": "Иванов",
+      "position": "Тестировщик",
+      "company": "Base"
+    },
+    {
+      "id": 9,
+      "name": "Иван",
+      "lastname": "Иванов",
+      "position": "Тестировщик",
+      "company": "Base"
+    },
+    {
+      "id": 12,
+      "name": "Иван",
+      "lastname": "Иванов",
+      "position": "Тестировщик",
+      "company": "Base"
+    },
+    {
+      "id": 13,
+      "name": "Иван",
+      "lastname": "Иванов",
+      "position": "Тестировщик",
+      "company": "Base"
+    },
+    {
+      "name": "Иван",
+      "lastname": "Иванов",
+      "company": "Baikal",
+      "position": "Дизайнер",
+      "id": 17
+    },
+    {
+      "name": "Иван",
+      "lastname": "Иванов",
+      "company": "Ideas",
+      "position": "Разработчик",
+      "id": 18
+    },
+    {
+      "name": "Иван",
+      "lastname": "Иванов",
+      "company": "Ideas",
+      "position": "Разработчик",
+      "id": 19
+    },
+    {
+      "name": "Иван",
+      "lastname": "Иванов",
+      "company": "Ideas",
+      "position": "Разработчик",
+      "id": 20
+    },
+    {
+      "name": "Ирина",
+      "lastname": "Крылова",
+      "company": "Link",
+      "position": "Разработчик",
+      "id": 21
+    },
+    {
+      "name": "Ирина",
+      "lastname": "Крылова",
+      "company": "Link",
+      "position": "Разработчик",
+      "id": 22
+    },
+    {
+      "name": "Ирина",
+      "lastname": "Крылова",
+      "company": "Link",
+      "position": "Разработчик",
+      "id": 23
+    },
+    {
+      "name": "Ирина",
+      "lastname": "Крылова",
+      "company": "Link",
+      "position": "Разработчик",
+      "id": 24
+    },
+    {
+      "name": "Ирина",
+      "lastname": "Крылова",
+      "company": "Link",
+      "position": "Разработчик",
+      "id": 25
+    },
+    {
+      "name": "Ирина",
+      "lastname": "Крылова",
+      "company": "Ivanovo",
+      "position": "Разработчик",
+      "id": 26
+    },
+    {
+      "name": "Ирина",
+      "lastname": "Крылова",
+      "company": "Ivanovo",
+      "position": "Разработчик",
+      "id": 27
+    },
+    {
+      "name": "Ирина",
+      "lastname": "Крылова",
+      "company": "Ivanovo",
+      "position": "Разработчик",
+      "id": 29
+    },
+    {
+      "name": "Ирина",
+      "lastname": "Крылова",
+      "company": "Ivanovo",
+      "position": "Разработчик",
+      "id": 30
+    },
+    {
+      "name": "Ирина",
+      "lastname": "Крылова",
+      "company": "Ivanovo",
+      "position": "Разработчик",
+      "id": 31
+    },
+    {
+      "name": "Ирина",
+      "lastname": "Крылова",
+      "company": "Ivanovo",
+      "position": "Разработчик",
+      "id": 32
+    },
+    {
+      "name": "Иван",
+      "lastname": "Иванов",
+      "company": "Base",
+      "position": "Тестировщик",
+      "id": 33
+    },
+    {
+      "name": "Иван",
+      "lastname": "Иванов",
+      "company": "Base",
+      "position": "Тестировщик",
+      "id": 34
+    },
+    {
+      "name": "Иван",
+      "lastname": "Иванов",
+      "company": "Base",
+      "position": "Тестировщик",
+      "id": 35
+    },
+    {
+      "name": "Иван",
+      "lastname": "Иванов",
+      "company": "Base",
+      "position": "Тестировщик",
+      "id": 36
+    },
+    {
+      "name": "Иван",
+      "lastname": "Иванов",
+      "company": "Base",
+      "position": "Тестировщик",
+      "id": 37
+    },
+    {
+      "name": "Иван",
+      "lastname": "Иванов",
+      "company": "Base",
+      "position": "Тестировщик",
+      "id": 38
+    },
+    {
+      "name": "Иван",
+      "lastname": "Иванов",
+      "company": "Base",
+      "position": "Тестировщик",
+      "id": 39
+    },
+    {
+      "name": "Иван",
+      "lastname": "Иванов",
+      "company": "Base",
+      "position": "Тестировщик",
+      "id": 40
+    },
+    {
+      "name": "Иван",
+      "lastname": "Иванов",
+      "company": "Base",
+      "position": "Тестировщик",
+      "id": 41
+    },
+    {
+      "name": "Иван",
+      "lastname": "Иванов",
+      "company": "Base",
+      "position": "Тестировщик",
+      "id": 42
+    }
+  ]
+}

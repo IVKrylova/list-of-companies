@@ -1,0 +1,9 @@
+.header {
+  margin: 50px auto;
+}
+
+.header__title {
+  text-align: center;
+  font-size: 24px;
+  margin: 0;
+}

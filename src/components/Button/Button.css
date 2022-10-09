@@ -1,0 +1,7 @@
+.button {
+  display: block;
+  box-sizing: border-box;
+  font-size: 12px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
