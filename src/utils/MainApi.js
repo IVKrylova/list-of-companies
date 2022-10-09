@@ -8,8 +8,8 @@ class MainApi {
   }
 
   // метод получения компаний
-  getCompanies() {
-    return fetch(`${this.baseUrl}/companies`, {
+  getCompanies(page) {
+    return fetch(`${this.baseUrl}/companies?_page=${page}`, {
       method: 'GET',
       headers: this.headers,
     })
@@ -23,6 +23,7 @@ class MainApi {
       headers: this.headers,
     })
     .then(checkResponse)
+    .then(res => res.res)
   }
 
   // метод обновления данных компании
@@ -37,6 +38,7 @@ class MainApi {
       })
     })
     .then(checkResponse)
+    .then(res => res.res)
   }
 
   // метод обновления данных сотрудника
@@ -53,6 +55,7 @@ class MainApi {
       })
     })
     .then(checkResponse)
+    .then(res => res.res)
   }
 
   // метод добавления новой компании
@@ -66,6 +69,7 @@ class MainApi {
       })
     })
     .then(checkResponse)
+    .then(res => res.res)
   }
 
   // метод добавления нового сотрудника
@@ -81,6 +85,7 @@ class MainApi {
       })
     })
     .then(checkResponse)
+    .then(res => res.res)
   }
 
   // метод удаления компании
@@ -90,6 +95,7 @@ class MainApi {
       headers: this.headers,
     })
     .then(checkResponse)
+    .then(res => res.res)
   }
 
   // метод удаления сотрудника
@@ -99,6 +105,7 @@ class MainApi {
       headers: this.headers,
     })
     .then(checkResponse)
+    .then(res => res.res)
   }
 }
 

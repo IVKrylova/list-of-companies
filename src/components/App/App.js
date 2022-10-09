@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import './App.css';
 import Header from '../Header/Header';
@@ -56,21 +56,75 @@ const App = _ => {
 
   const dispatch = useDispatch();
 
+  // стейты для бесконечного скролла
+  const [currentPage, setCurrentPage] = useState(1);
+  const [fetching, setFetching] = useState(true);
+  const [totalCount, setTotalCount] = useState(0);
+
+  // обработчик скролла страницы
+  const handleScroll = _ => {
+    // высота документа
+    const documentHeight = document.body.offsetHeight;
+    // высота экрана
+    const screenHeight = window.innerHeight;
+    // величина скролла
+    const scroll = window.scrollY;
+    // лимит, после которого подгружаются данные
+    const limit = documentHeight - screenHeight / 5;
+    // позиция низа экрана относительно страницы
+    const position = scroll + screenHeight;
+
+    if (position >= limit && companies.length <= totalCount) {
+      setFetching(true);
+    }
+  }
+
+  // улучшаем производительность
+  const throttle = (callee, timeout) => {
+    let timer = null;
+
+    return function perform(...args) {
+      if (timer) return;
+
+      timer = setTimeout(_ => {
+        callee(...args);
+        clearTimeout(timer);
+        timer = null;
+      }, timeout)
+    }
+  }
+  const optimizedHandlerScroll = throttle(handleScroll, 250);
+
+  // вешаем обработчик скролла на документ
+  useEffect(_ => {
+    document.addEventListener('scroll', optimizedHandlerScroll);
+
+    return function() {
+      document.removeEventListener('scroll', optimizedHandlerScroll);
+    }
+  }, []);
+
   // получаем компании при загрузке страницы
   useEffect(_ => {
-    mainApi.getCompanies()
+    if (fetching) {
+      mainApi.getCompanies(currentPage)
       .then(res => {
-        dispatch(getCompanies(res));
+        setTotalCount(res.headerTotalCount);
+        return res.res;
       })
-      .catch(err => console.log(err))
-  }, []);
+        .then(res => {
+          dispatch(getCompanies([...companies, ...res].flat()));
+          setCurrentPage(currentPage + 1);
+        })
+        .catch(err => console.log(err))
+        .finally(_ => setFetching(false));
+    }
+  }, [fetching]);
 
   // получаем сотрудников при загрузке страницы
   useEffect(_ => {
     mainApi.getCoworkers()
-      .then(res => {
-        dispatch(getCoworkers(res));
-      })
+      .then(res => dispatch(getCoworkers(res)))
       .catch(err => console.log(err))
   }, []);
 
