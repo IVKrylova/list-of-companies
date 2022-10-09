@@ -26,7 +26,7 @@ class MainApi {
   }
 
   // метод обновления данных компании
-  updateCompanie(data) {
+  updateCompany(data) {
     return fetch(`${this.baseUrl}/companies/${data.id}`, {
       method: 'PUT',
       headers: this.headers,

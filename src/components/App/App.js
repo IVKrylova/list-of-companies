@@ -7,9 +7,9 @@ import Main from '../Main/Main';
 import { mainApi } from '../../utils/MainApi';
 import {
   getCompanies,
-  checkCompanie,
-  checkAllCompanie,
-  uncheckAllCompanie,
+  checkCompany,
+  checkAllCompanies,
+  uncheckAllCompanies,
   addNewCompanyToStore,
   deleteCompanyFromStore,
 } from '../../store/actionCreators/companies';
@@ -22,8 +22,8 @@ import {
   deleteCoworkerFromStore,
 } from '../../store/actionCreators/coworkers';
 import {
-  addCompanieToChecked,
-  deleteCompanieFromChecked,
+  addCompanyToChecked,
+  deleteCompanyFromChecked,
   addAllCompaniesToChecked,
   deleteAllCompaniesFromChecked,
 } from '../../store/actionCreators/checkedCompanies';
@@ -75,20 +75,20 @@ const App = _ => {
   }, []);
 
   // обработчик клика по чекбоксу компании
-  const handleClickCheckboxCompanie = companie => {
+  const handleClickCheckboxCompany = company => {
     // устанавливаем флаг в чекбоксе
-    dispatch(checkCompanie(companies, companie));
+    dispatch(checkCompany(companies, company));
     // добавляем/удаляем компанию из выбранных
-    if (companie.checked) {
+    if (company.checked) {
       // добавляем компании в массив выбранных компаний
-      dispatch(addCompanieToChecked(checkedCompanies, companie));
+      dispatch(addCompanyToChecked(checkedCompanies, company));
       // добавляем сотрудников в массив по названию компании
-      dispatch(addCoworkers(selectedCoworkers, coworkers.filter(el => el.company === companie.name)));
+      dispatch(addCoworkers(selectedCoworkers, coworkers.filter(el => el.company === company.name)));
     } else {
       // удаляем компании из массива выбранных компаний
-      dispatch(deleteCompanieFromChecked(checkedCompanies, companie));
+      dispatch(deleteCompanyFromChecked(checkedCompanies, company));
       // удаляем сотрудников из массива по названию компании
-      dispatch(deleteCoworkers(selectedCoworkers, companie));
+      dispatch(deleteCoworkers(selectedCoworkers, company));
     }
   }
 
@@ -112,17 +112,17 @@ const App = _ => {
       // добавляем компании в массив выбранных
       dispatch(addAllCompaniesToChecked(companies));
       // устанавливаем флаг в чекбоксе
-      dispatch(checkAllCompanie(companies));
+      dispatch(checkAllCompanies(companies));
       // показываем массив с сотрудниками
       dispatch(addAllCoworkers(coworkers))
     }
     if (isChecked) {
       // удаляем компании из массива выбранных
-      dispatch(deleteAllCompaniesFromChecked(companies));
+      dispatch(deleteAllCompaniesFromChecked());
       // удаляем флаг в чекбоксе
-      dispatch(uncheckAllCompanie(companies));
+      dispatch(uncheckAllCompanies(companies));
       // очищаем массив с сотрудниками
-      dispatch(deleteAllCoworkers(coworkers));
+      dispatch(deleteAllCoworkers());
     }
   }
 
@@ -138,7 +138,7 @@ const App = _ => {
       // удаляем флаг в чекбоксе
       dispatch(uncheckAllCoworkers(coworkers));
       // удаляем сотрудников из массива выбранных
-      dispatch(deleteAllCoworkersFromChecked(checkedCoworkers));
+      dispatch(deleteAllCoworkersFromChecked());
     }
   }
 
@@ -146,7 +146,7 @@ const App = _ => {
   const handleUpdateCompany = evt => {
     evt.preventDefault();
 
-    mainApi.updateCompanie(updatingCompany)
+    mainApi.updateCompany(updatingCompany)
       .then(_ => {
         mainApi.getCompanies()
           .then(res => dispatch(getCompanies(res)))
@@ -212,9 +212,9 @@ const App = _ => {
     })
 
     // удаляем компании из массива выбранных
-    dispatch(deleteAllCompaniesFromChecked(companies));
+    dispatch(deleteAllCompaniesFromChecked());
     // удаляем сотрудников из таблицы
-    dispatch(deleteAllCoworkers(coworkers));
+    dispatch(deleteAllCoworkers());
   }
 
   // обработчик удаления сотрудника
@@ -226,7 +226,7 @@ const App = _ => {
     // удаляем сотрудников из store
     dispatch(deleteCoworkerFromStore(coworkers));
     // очищаем массив выбранных сотрудников
-    dispatch(deleteAllCoworkersFromChecked(selectedCoworkers));
+    dispatch(deleteAllCoworkersFromChecked());
     // удаляем сотрудников из таблицы
     dispatch(deleteCoworkersFromTable(selectedCoworkers));
   }
@@ -235,7 +235,7 @@ const App = _ => {
     <div className="App">
       <Header />
       <Main
-        onClickCheckboxCompanie={handleClickCheckboxCompanie}
+        onClickCheckboxCompany={handleClickCheckboxCompany}
         onClickCheckboxCoworker={handleClickCheckboxCoworker}
         onClickCheckboxAllCompanies={handleClickCheckboxAllCompanies}
         onClickCheckboxAllCoworkers={handleClickCheckboxAllCoworkers}

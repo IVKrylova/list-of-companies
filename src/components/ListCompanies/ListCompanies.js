@@ -22,7 +22,7 @@ const ListCompanies = props => {
           isHiddenButtonAdd={true}
           checked={company.checked}
           onClickCheckbox={props.onClickCheckbox}
-          companie={company}
+          company={company}
           nameSecondCell='name'
           nameThirdCell='count'
           nameFourthCell='address'

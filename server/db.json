@@ -1,42 +1,28 @@
 {
   "companies": [
     {
-      "id": 1,
-      "name": "Rendering",
-      "address": "г. Москва, пр. Ленина, д.1"
-    },
-    {
       "name": "Base",
       "address": "г. Томск, пр. Ленина, д.1",
       "id": 3
     },
     {
-      "name": "Ivanovo",
-      "address": "ул. Заломова, 15",
+      "name": "Baikal",
+      "address": "г. Москва, ул. Заломова, д.5",
       "id": 4
+    },
+    {
+      "name": "Ideas",
+      "address": "г. Москва, ул. Ленина, д.5",
+      "id": 5
     }
   ],
   "coworkers": [
-    {
-      "id": 1,
-      "name": "Иван",
-      "lastname": "Иванов",
-      "position": "Frontend-разработчик",
-      "company": "Rendering"
-    },
     {
       "id": 3,
       "name": "Иван",
       "lastname": "Иванов",
       "position": "Тестировщик",
       "company": "Base"
-    },
-    {
-      "id": 4,
-      "name": "Иван",
-      "lastname": "Иванов",
-      "position": "Frontend-разработчик",
-      "company": "Rendering"
     },
     {
       "id": 6,
@@ -46,25 +32,11 @@
       "company": "Base"
     },
     {
-      "id": 7,
-      "name": "Иван",
-      "lastname": "Иванов",
-      "position": "Frontend-разработчик",
-      "company": "Rendering"
-    },
-    {
       "id": 9,
       "name": "Иван",
       "lastname": "Иванов",
       "position": "Тестировщик",
       "company": "Base"
-    },
-    {
-      "id": 10,
-      "name": "Иван",
-      "lastname": "Иванов",
-      "position": "Frontend-разработчик",
-      "company": "Rendering"
     },
     {
       "id": 12,
@@ -81,11 +53,53 @@
       "company": "Base"
     },
     {
-      "name": "Ирина",
-      "lastname": "Крылова",
-      "company": "Ivanovo",
-      "position": "Ирина",
+      "name": "Иван",
+      "lastname": "Иванов",
+      "company": "Baikal",
+      "position": "Дизайнер",
       "id": 14
+    },
+    {
+      "name": "Иван",
+      "lastname": "Иванов",
+      "company": "Baikal",
+      "position": "Дизайнер",
+      "id": 15
+    },
+    {
+      "name": "Иван",
+      "lastname": "Иванов",
+      "company": "Baikal",
+      "position": "Дизайнер",
+      "id": 16
+    },
+    {
+      "name": "Иван",
+      "lastname": "Иванов",
+      "company": "Baikal",
+      "position": "Дизайнер",
+      "id": 17
+    },
+    {
+      "name": "Иван",
+      "lastname": "Иванов",
+      "company": "Ideas",
+      "position": "Разработчик",
+      "id": 18
+    },
+    {
+      "name": "Иван",
+      "lastname": "Иванов",
+      "company": "Ideas",
+      "position": "Разработчик",
+      "id": 19
+    },
+    {
+      "name": "Иван",
+      "lastname": "Иванов",
+      "company": "Ideas",
+      "position": "Разработчик",
+      "id": 20
     }
   ]
 }

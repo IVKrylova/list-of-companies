@@ -1,18 +1,18 @@
 import { checkedCompaniesActionTypes } from '../actionTypes/checkedCompanies';
 
 // функция добавления компании в массив выбранных компаний
-export const addCompanieToChecked = (companies, companie) => {
+export const addCompanyToChecked = (companies, company) => {
   return {
-    type: checkedCompaniesActionTypes.ADD_COMPANIE,
-    payload: [...companies, companie],
+    type: checkedCompaniesActionTypes.ADD_COMPANY,
+    payload: [...companies, company],
   }
 }
 
 // функция удаления компании из массива выбранных компаний
-export const deleteCompanieFromChecked = (companies, companie) => {
+export const deleteCompanyFromChecked = (companies, company) => {
   return {
-    type: checkedCompaniesActionTypes.DELETE_COMPANIE,
-    payload: companies.filter(el => el.id !== companie.id),
+    type: checkedCompaniesActionTypes.DELETE_COMPANY,
+    payload: companies.filter(el => el.id !== company.id),
   }
 }
 
@@ -25,7 +25,7 @@ export const addAllCompaniesToChecked = companies => {
 }
 
 // функция удаления всех компаний из массива выделенных
-export const deleteAllCompaniesFromChecked = companies => {
+export const deleteAllCompaniesFromChecked = _ => {
   return {
     type: checkedCompaniesActionTypes.DELETE_ALL_COMPANIES,
     payload: [],

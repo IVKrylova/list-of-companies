@@ -27,7 +27,7 @@ const Main = props => {
       >
         <ListCompanies
           companies={companies}
-          onClickCheckbox={props.onClickCheckboxCompanie}
+          onClickCheckbox={props.onClickCheckboxCompany}
         />
       </Table>
       <Table

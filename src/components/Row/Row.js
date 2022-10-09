@@ -16,7 +16,7 @@ const Row = props => {
   // обработчик клика по чекбоксу
   const handleClickCheckbox = _ => {
     if (props.labelText !== 'Выделить всё') {
-      props.companie && props.onClickCheckbox(props.companie);
+      props.company && props.onClickCheckbox(props.company);
       props.coworker && props.onClickCheckbox(props.coworker);
     }
 
@@ -27,10 +27,10 @@ const Row = props => {
 
   // установка начального значения стейтов ячеек
   useEffect(_ => {
-    props.companie && setValues({
-      name: props.companie.name,
-      address: props.companie.address,
-      id: props.companie.id
+    props.company && setValues({
+      name: props.company.name,
+      address: props.company.address,
+      id: props.company.id
     });
 
     props.coworker && setValues({
@@ -52,7 +52,7 @@ const Row = props => {
 
   // сохраняем значения в store
   useEffect(_ => {
-    props.companie && dispatch(updateCompany(values));
+    props.company && dispatch(updateCompany(values));
     props.coworker && dispatch(updateCoworker(values));
   }, [values])
 

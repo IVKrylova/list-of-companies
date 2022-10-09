@@ -4,8 +4,8 @@ import { companiesActionTypes } from '../actionTypes/companies';
 export const getCompanies = companies => {
   return {
     type: companiesActionTypes.GET_COMPANIES,
-    payload: companies.map(companie => {
-      const row = JSON.parse(JSON.stringify(companie));
+    payload: companies.map(company => {
+      const row = JSON.parse(JSON.stringify(company));
       row.checked = false;
 
       return row;
@@ -14,11 +14,11 @@ export const getCompanies = companies => {
 }
 
 // функция клика по чекбоксу
-export const checkCompanie = (companies, companie) => {
+export const checkCompany = (companies, company) => {
   return {
-    type: companiesActionTypes.CHECK_COMPANIE,
+    type: companiesActionTypes.CHECK_COMPANY,
     payload: companies.map(el => {
-      if (el.id === companie.id) el.checked = !el.checked;
+      if (el.id === company.id) el.checked = !el.checked;
 
       return el;
     }),
@@ -26,7 +26,7 @@ export const checkCompanie = (companies, companie) => {
 }
 
 // функция установки флажка в чекбоксе для всех компаний
-export const checkAllCompanie = companies => {
+export const checkAllCompanies = companies => {
   return {
     type: companiesActionTypes.CHECK_ALL_COMPANIES,
     payload: companies.map(el => {
@@ -38,7 +38,7 @@ export const checkAllCompanie = companies => {
 }
 
 // функция снятия флажка в чекбоксе для всех компаний
-export const uncheckAllCompanie = companies => {
+export const uncheckAllCompanies = companies => {
   return {
     type: companiesActionTypes.CHECK_ALL_COMPANIES,
     payload: companies.map(el => {

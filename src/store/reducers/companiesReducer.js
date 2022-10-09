@@ -11,7 +11,7 @@ export const companiesReducer = (state = initialState, action) => {
         ...state,
         companies: action.payload,
       };
-    case companiesActionTypes.CHECK_COMPANIE:
+    case companiesActionTypes.CHECK_COMPANY:
       return {
         ...state,
         companies: action.payload,

@@ -6,12 +6,12 @@ const initialState = {
 
 export const checkedCompaniesReduser = (state = initialState, action) => {
   switch(action.type) {
-    case checkedCompaniesActionTypes.ADD_COMPANIE:
+    case checkedCompaniesActionTypes.ADD_COMPANY:
       return {
         ...state,
         checkedCompanies: action.payload,
       };
-    case checkedCompaniesActionTypes.DELETE_COMPANIE:
+    case checkedCompaniesActionTypes.DELETE_COMPANY:
       return {
         ...state,
         checkedCompanies: action.payload,
