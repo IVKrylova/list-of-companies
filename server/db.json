@@ -14,6 +14,11 @@
       "name": "Ideas",
       "address": "г. Москва, ул. Ленина, д.5",
       "id": 5
+    },
+    {
+      "name": "Ivanovo",
+      "address": "г. Томск, ул. Мира, д.1",
+      "id": 6
     }
   ],
   "coworkers": [
@@ -100,6 +105,13 @@
       "company": "Ideas",
       "position": "Разработчик",
       "id": 20
+    },
+    {
+      "name": "Ирина",
+      "lastname": "Крылова",
+      "company": "Ivanovo",
+      "position": "Разработчик",
+      "id": 21
     }
   ]
 }
