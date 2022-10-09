@@ -56,3 +56,11 @@ export const addNewCompanyToStore = (companies, company) => {
     payload: [ ...companies, company ],
   }
 }
+
+// функция удаления компании
+export const deleteCompanyFromStore = (companies) => {
+  return {
+    type: companiesActionTypes.DELETE_COMPANY_FROM_STORE,
+    payload: companies.filter(el => el.checked === false),
+  }
+}

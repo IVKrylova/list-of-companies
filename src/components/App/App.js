@@ -11,6 +11,7 @@ import {
   checkAllCompanie,
   uncheckAllCompanie,
   addNewCompanyToStore,
+  deleteCompanyFromStore,
 } from '../../store/actionCreators/companies';
 import {
   getCoworkers,
@@ -23,7 +24,7 @@ import {
   addCompanieToChecked,
   deleteCompanieFromChecked,
   addAllCompaniesToChecked,
-  deleteAllCompaniesToChecked,
+  deleteAllCompaniesFromChecked,
 } from '../../store/actionCreators/checkedCompanies';
 import {
   addCoworkers,
@@ -115,7 +116,7 @@ const App = _ => {
     }
     if (isChecked) {
       // удаляем компании из массива выбранных
-      dispatch(deleteAllCompaniesToChecked(companies));
+      dispatch(deleteAllCompaniesFromChecked(companies));
       // удаляем флаг в чекбоксе
       dispatch(uncheckAllCompanie(companies));
       // очищаем массив с сотрудниками
@@ -190,6 +191,34 @@ const App = _ => {
       .catch(err => console.log(err));
   }
 
+  // обработчик удаления компании
+  const handleClickDeleteCompany = _ => {
+    checkedCompanies.forEach(el => {
+      mainApi.deleteCompany(el.id).catch(err => console.log(err));
+    });
+
+    // удаляем компании из таблицы
+    dispatch(deleteCompanyFromStore(companies));
+
+    checkedCompanies.forEach(el => {
+      coworkers.forEach(coworker => {
+        if (el.name === coworker.company) {
+          mainApi.deleteCoworker(coworker.id).catch(err => console.log(err));
+        }
+      })
+    })
+
+    // удаляем компании из массива выбранных
+    dispatch(deleteAllCompaniesFromChecked(companies));
+    // удаляем сотрудников из таблицы
+    dispatch(deleteAllCoworkers(coworkers));
+  }
+
+  // обработчик удаления сотрудника
+  const handleClickDeleteCoworker = _ => {
+
+  }
+
   return (
     <div className="App">
       <Header />
@@ -202,6 +231,8 @@ const App = _ => {
         onUpdateCoworker={handleUpdateCoworker}
         addNewCompany={handleAddNewCompany}
         addNewCoworker={handleAddNewCoworker}
+        onClickDeleteCompany={handleClickDeleteCompany}
+        onClickDeleteCoworker={handleClickDeleteCoworker}
       />
       <Footer />
     </div>

@@ -56,4 +56,3 @@ export const addNewCoworkerToStore = (coworkers, coworker) => {
     payload: [ ...coworkers, coworker ],
   }
 }
-

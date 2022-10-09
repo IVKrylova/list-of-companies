@@ -46,6 +46,7 @@ const Table = props => {
             disabled={!props.isChecked}
             buttonText='Удалить'
             type='button'
+            onClickButtonDelete={props.onClickButtonDelete}
           />
         </li>
       </ul>

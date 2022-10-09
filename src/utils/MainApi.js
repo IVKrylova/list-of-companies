@@ -82,6 +82,24 @@ class MainApi {
     })
     .then(checkResponse)
   }
+
+  // метод удаления компании
+  deleteCompany(id) {
+    return fetch(`${this.baseUrl}/companies/${id}`, {
+      method: 'DELETE',
+      headers: this.headers,
+    })
+    .then(checkResponse)
+  }
+
+  // метод удаления сотрудника
+  deleteCoworker(id) {
+    return fetch(`${this.baseUrl}/coworkers/${id}`, {
+      method: 'DELETE',
+      headers: this.headers,
+    })
+    .then(checkResponse)
+  }
 }
 
 export const mainApi = new MainApi(mainOptions);

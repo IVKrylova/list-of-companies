@@ -22,6 +22,7 @@ const Main = props => {
         onClickCheckbox={props.onClickCheckboxAllCompanies}
         onSubmitForm={props.onUpdateCompany}
         addNewCompany={props.addNewCompany}
+        onClickButtonDelete={props.onClickDeleteCompany}
       >
         <ListCompanies
           companies={companies}
@@ -37,6 +38,7 @@ const Main = props => {
         onClickCheckbox={props.onClickCheckboxAllCoworkers}
         onSubmitForm={props.onUpdateCoworker}
         addNewCoworker={props.addNewCoworker}
+        onClickButtonDelete={props.onClickDeleteCoworker}
       >
         <ListCoworkers
           coworkers={selectedCoworkers}

@@ -6,34 +6,9 @@
       "address": "г. Москва, пр. Ленина, д.1"
     },
     {
-      "name": "Ideas",
-      "address": "г. Омск, пр. Ленина, д.8",
-      "id": 2
-    },
-    {
       "name": "Base",
       "address": "г. Томск, пр. Ленина, д.1",
       "id": 3
-    },
-    {
-      "name": "Line",
-      "address": "ул. Заломова, 15",
-      "id": 4
-    },
-    {
-      "name": "Baikal",
-      "address": "ул. Заломова, 15",
-      "id": 5
-    },
-    {
-      "name": "Ivanovo",
-      "address": "ул. Заломова, 15",
-      "id": 6
-    },
-    {
-      "name": "Baikal",
-      "address": "ул. Заломова, 15",
-      "id": 7
     }
   ],
   "coworkers": [
@@ -43,13 +18,6 @@
       "lastname": "Иванов",
       "position": "Frontend-разработчик",
       "company": "Rendering"
-    },
-    {
-      "id": 2,
-      "name": "Иван",
-      "lastname": "Иванов",
-      "position": "Дизайнер",
-      "company": "Ideas"
     },
     {
       "id": 3,
@@ -66,13 +34,6 @@
       "company": "Rendering"
     },
     {
-      "name": "Саша",
-      "lastname": "Иванов",
-      "id": 5,
-      "position": "Тестировщик",
-      "company": "Ideas"
-    },
-    {
       "id": 6,
       "name": "Иван",
       "lastname": "Иванов",
@@ -85,13 +46,6 @@
       "lastname": "Иванов",
       "position": "Frontend-разработчик",
       "company": "Rendering"
-    },
-    {
-      "id": 8,
-      "name": "Иван",
-      "lastname": "Иванов",
-      "position": "Дизайнер",
-      "company": "Ideas"
     },
     {
       "id": 9,
@@ -108,13 +62,6 @@
       "company": "Rendering"
     },
     {
-      "id": 11,
-      "name": "Иван",
-      "lastname": "Иванов",
-      "position": "Дизайнер",
-      "company": "Ideas"
-    },
-    {
       "id": 12,
       "name": "Иван",
       "lastname": "Иванов",
@@ -127,34 +74,6 @@
       "lastname": "Иванов",
       "position": "Тестировщик",
       "company": "Base"
-    },
-    {
-      "name": "Яна",
-      "lastname": "Иванова",
-      "company": "Line",
-      "position": "Тестировщик",
-      "id": 14
-    },
-    {
-      "name": "Яна",
-      "lastname": "Иванова",
-      "company": "Line",
-      "position": "Тестировщик",
-      "id": 15
-    },
-    {
-      "name": "Яна",
-      "lastname": "Иванова",
-      "company": "Line",
-      "position": "Тестировщик",
-      "id": 16
-    },
-    {
-      "name": "Анна",
-      "lastname": "Иванова",
-      "company": "Line",
-      "position": "Разработчик",
-      "id": 17
     }
   ]
 }

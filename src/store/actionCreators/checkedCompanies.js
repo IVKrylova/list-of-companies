@@ -25,7 +25,7 @@ export const addAllCompaniesToChecked = companies => {
 }
 
 // функция удаления всех компаний из массива выделенных
-export const deleteAllCompaniesToChecked = companies => {
+export const deleteAllCompaniesFromChecked = companies => {
   return {
     type: checkedCompaniesActionTypes.DELETE_ALL_COMPANIES,
     payload: [],
