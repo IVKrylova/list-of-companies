@@ -1,6 +1,5 @@
 import { companiesActionTypes } from '../actionTypes/companies';
 
-// функция получения списка компаний
 export const getCompanies = companies => {
   return {
     type: companiesActionTypes.GET_COMPANIES,
@@ -13,7 +12,6 @@ export const getCompanies = companies => {
   }
 }
 
-// функция клика по чекбоксу
 export const checkCompany = (companies, company) => {
   return {
     type: companiesActionTypes.CHECK_COMPANY,
@@ -25,7 +23,6 @@ export const checkCompany = (companies, company) => {
   }
 }
 
-// функция установки флажка в чекбоксе для всех компаний
 export const checkAllCompanies = companies => {
   return {
     type: companiesActionTypes.CHECK_ALL_COMPANIES,
@@ -37,7 +34,6 @@ export const checkAllCompanies = companies => {
   }
 }
 
-// функция снятия флажка в чекбоксе для всех компаний
 export const uncheckAllCompanies = companies => {
   return {
     type: companiesActionTypes.CHECK_ALL_COMPANIES,
@@ -49,7 +45,6 @@ export const uncheckAllCompanies = companies => {
   }
 }
 
-// функция добавления новой компании
 export const addNewCompanyToStore = (companies, company) => {
   return {
     type: companiesActionTypes.ADD_NEW_COMPANY_TO_COMPANIES,
@@ -57,7 +52,6 @@ export const addNewCompanyToStore = (companies, company) => {
   }
 }
 
-// функция удаления компании
 export const deleteCompanyFromStore = (companies) => {
   return {
     type: companiesActionTypes.DELETE_COMPANY_FROM_STORE,

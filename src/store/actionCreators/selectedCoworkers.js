@@ -1,6 +1,5 @@
 import { selectedCoworkersActionTypes } from '../actionTypes/selectedCoworkers';
 
-// функция добавления сотрудников в массив по названию компании
 export const addCoworkers = (selectedCoworkers, coworkers) => {
   return {
     type: selectedCoworkersActionTypes.ADD_COWORKERS,
@@ -8,7 +7,6 @@ export const addCoworkers = (selectedCoworkers, coworkers) => {
   }
 }
 
-// функция удаления сотрудников из массива по названию компании
 export const deleteCoworkers = (selectedCoworkers, companie) => {
   return {
     type: selectedCoworkersActionTypes.DELETE_COWORKERS,
@@ -16,7 +14,6 @@ export const deleteCoworkers = (selectedCoworkers, companie) => {
   }
 }
 
-// функция добавления всех сотрудников в массив
 export const addAllCoworkers = coworkers => {
   return {
     type: selectedCoworkersActionTypes.ADD_ALL_COWORKERS,
@@ -24,7 +21,6 @@ export const addAllCoworkers = coworkers => {
   }
 }
 
-// функция удаления всех сотрудников из массива
 export const deleteAllCoworkers = _ => {
   return {
     type: selectedCoworkersActionTypes.DELETE_ALL_COWORKERS,
@@ -32,7 +28,6 @@ export const deleteAllCoworkers = _ => {
   }
 }
 
-// функция добавления нового сотрудника в таблицу
 export const addNewCoworkerToTable = (coworkers, coworker) => {
   return {
     type: selectedCoworkersActionTypes.ADD_COWORKER_TO_TABLE,
@@ -40,7 +35,6 @@ export const addNewCoworkerToTable = (coworkers, coworker) => {
   }
 }
 
-//функция удаления сотрудников из таблицы
 export const deleteCoworkersFromTable = coworkers => {
   return {
     type: selectedCoworkersActionTypes.DELETE_COWORKES_FROM_TABLE,

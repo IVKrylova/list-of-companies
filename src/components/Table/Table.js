@@ -6,11 +6,9 @@ import TableAddCoworker from '../TableAddCoworker/TableAddCoworker';
 import './Table.css';
 
 const Table = props => {
-  // получаем данные из store
   const selectedCoworkers = useSelector(store => store.selectedCoworkers.selectedCoworkers);
   const companies = useSelector(store => store.companies.companies);
 
-  // значение чекбокса
   const isChecked = props.tableName === 'coworkers' ? selectedCoworkers.every(el => el.checked) : companies.every(el => el.checked);
 
   return (

@@ -5,7 +5,6 @@ import Table from '../Table/Table';
 import './Main.css';
 
 const Main = props => {
-  // получаем данные из store
   const companies = useSelector(store => store.companies.companies);
   const selectedCoworkers = useSelector(store => store.selectedCoworkers.selectedCoworkers);
   const checkedCompanies = useSelector(store => store.checkedCompanies.checkedCompanies);

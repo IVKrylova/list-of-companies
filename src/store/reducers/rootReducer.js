@@ -9,7 +9,6 @@ import { updatingCoworkerReduser } from './updatingCoworkerReduser';
 import { newCompanyReducer } from './newCompanyReduser';
 import { newCoworkerReducer } from './newCoworkerReduser';
 
-// общий редьюсер
 export const rootReduser = combineReducers({
   companies: companiesReducer,
   coworkers: coworkersReducer,

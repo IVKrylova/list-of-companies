@@ -1,6 +1,5 @@
 import { coworkersActionTypes } from '../actionTypes/coworkers';
 
-// функция получения списка сотрудников
 export const getCoworkers = coworkers => {
   return {
     type: coworkersActionTypes.GET_COWORKERS,
@@ -13,7 +12,6 @@ export const getCoworkers = coworkers => {
   }
 }
 
-// функция клика по чекбоксу
 export const checkCoworker = (coworkers, coworker) => {
   return {
     type: coworkersActionTypes.CHECK_COWORKER,
@@ -25,7 +23,6 @@ export const checkCoworker = (coworkers, coworker) => {
   }
 }
 
-// функция установки флажка в чекбокс "Выделить всё"
 export const checkAllCoworkers = coworkers => {
   return {
     type: coworkersActionTypes.CHECK_ALL_COWORKERS,
@@ -37,7 +34,6 @@ export const checkAllCoworkers = coworkers => {
   }
 }
 
-// функция удаления флажка в чекбоксе "Выделить всё"
 export const uncheckAllCoworkers = coworkers => {
   return {
     type: coworkersActionTypes.UNCHECK_ALL_COWORKERS,
@@ -49,7 +45,6 @@ export const uncheckAllCoworkers = coworkers => {
   }
 }
 
-// функция добавления нового сотрудника
 export const addNewCoworkerToStore = (coworkers, coworker) => {
   return {
     type: coworkersActionTypes.ADD_NEW_COWORKER_TO_STORE,
@@ -57,7 +52,6 @@ export const addNewCoworkerToStore = (coworkers, coworker) => {
   }
 }
 
-// функция удаления компании
 export const deleteCoworkerFromStore = coworkers => {
   return {
     type: coworkersActionTypes.DELETE_COWORKER_FROM_STORE,

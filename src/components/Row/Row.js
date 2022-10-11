@@ -7,13 +7,10 @@ import './Row.css';
 const Row = props => {
   const dispatch = useDispatch();
 
-  // хуки состояния значения ячеек таблицы
   const [ values, setValues ] = useState({});
 
-  // класс ячейки
   const cellClassName = `row__cell ${props.cellClassModifier ? props.cellClassModifier : ''} ${props.checked ? 'row__cell_checked' : ''}`;
 
-  // обработчик клика по чекбоксу
   const handleClickCheckbox = _ => {
     if (props.labelText !== 'Выделить всё') {
       props.company && props.onClickCheckbox(props.company);
@@ -25,7 +22,6 @@ const Row = props => {
     }
   }
 
-  // установка начального значения стейтов ячеек
   useEffect(_ => {
     props.company && setValues({
       name: props.company.name,
@@ -43,14 +39,12 @@ const Row = props => {
 
   }, []);
 
-  // обработчик изменения ячейки
   const handleChange = evt => {
     const {name, value} = evt.target;
 
     setValues({...values, [name]: value });
   }
 
-  // сохраняем значения в store
   useEffect(_ => {
     props.company && dispatch(updateCompany(values));
     props.coworker && dispatch(updateCoworker(values));

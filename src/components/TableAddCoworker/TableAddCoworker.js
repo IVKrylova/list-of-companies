@@ -5,19 +5,16 @@ import { addNewCoworker } from '../../store/actionCreators/newCoworker';
 import './TableAddCoworker.css';
 
 const TableAddCoworker = props => {
-  // хуки состояния значения ячеек таблицы
   const [ values, setValues ] = useState({});
 
   const dispatch = useDispatch();
 
-  // обработчик изменения ячейки
   const handleChange = evt => {
     const {name, value} = evt.target;
 
     setValues({...values, [name]: value });
   }
 
-  // сохраняем значения в store
   useEffect(_ => {
     dispatch(addNewCoworker(values));
   }, [values]);

@@ -1,6 +1,5 @@
 import { updatingCoworkerActionTypes } from '../actionTypes/updatingCoworker';
 
-// функция обновления данных сотрудника
 export const updateCoworker = data => {
   return {
     type: updatingCoworkerActionTypes.UPDATE_COWORKER,
