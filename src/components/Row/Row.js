@@ -12,14 +12,8 @@ const Row = props => {
   const cellClassName = `row__cell ${props.cellClassModifier ? props.cellClassModifier : ''} ${props.checked ? 'row__cell_checked' : ''}`;
 
   const handleClickCheckbox = _ => {
-    if (props.labelText !== 'Выделить всё') {
-      props.company && props.onClickCheckbox(props.company);
-      props.coworker && props.onClickCheckbox(props.coworker);
-    }
-
-    if (props.labelText === 'Выделить всё') {
-      props.onClickCheckbox(props.checked);
-    }
+    props.company && props.onClickCheckbox(props.company);
+    props.coworker && props.onClickCheckbox(props.coworker);
   }
 
   useEffect(_ => {
@@ -60,7 +54,6 @@ const Row = props => {
           checked={props.checked}
           onChange={handleClickCheckbox}
         />
-        {props.labelText ? props.labelText : ''}
       </label>
       <textarea
         className={`${cellClassName} row__cell_textarea`}

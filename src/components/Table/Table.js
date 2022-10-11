@@ -4,6 +4,7 @@ import Button from '../Button/Button';
 import TableAddCompany from '../TableAddCompany/TableAddCompany';
 import TableAddCoworker from '../TableAddCoworker/TableAddCoworker';
 import './Table.css';
+import HeaderTable from '../HederTable/HeaderTable';
 
 const Table = props => {
   const selectedCoworkers = useSelector(store => store.selectedCoworkers.selectedCoworkers);
@@ -15,17 +16,10 @@ const Table = props => {
     <section className={`table ${selectedCoworkers.length === 0 && props.tableName === 'coworkers' ? 'table_hidden' : ''}`}>
       <h2 className='table__title'>{props.title}</h2>
       <form className='form' id={props.tableName} name={props.tableName} onSubmit={props.onSubmitForm}>
-      {/* Шапка таблицы */}
-      <Row
-        formName={props.tableName}
-        cellClassModifier='row__cell_header'
-        labelText='Выделить всё'
+      <HeaderTable
         secondCell={props.secondColumn}
         thirdCell={props.thirdColumn}
         fourthCell={props.fourthColumn}
-        editingSecondCell={true}
-        editingThirdCell={true}
-        editingFourthCell={true}
         onClickCheckbox={props.onClickCheckbox}
         checked={isChecked}
       />

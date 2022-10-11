@@ -30,10 +30,6 @@
   border-left: 1px solid #000;
 }
 
-.row__cell_header {
-  border-top: #000 solid 1px;
-}
-
 .row__cell_adding {
   border-top: #000 solid 1px;
 }

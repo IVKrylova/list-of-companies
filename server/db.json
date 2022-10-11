@@ -143,13 +143,6 @@
     {
       "name": "Иван",
       "lastname": "Иванов",
-      "company": "Baikal",
-      "position": "Дизайнер",
-      "id": 17
-    },
-    {
-      "name": "Иван",
-      "lastname": "Иванов",
       "company": "Ideas",
       "position": "Разработчик",
       "id": 18

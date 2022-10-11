@@ -1,0 +1,33 @@
+.header-table {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  border: none;
+  list-style-type: none;
+}
+
+.header-tabel__cell {
+  box-sizing: border-box;
+  border-right: 1px solid #000;
+  border-top: 1px solid #000;
+  border-bottom: #000 1px solid;
+  font-size: 12px;
+  padding: 5px;
+}
+
+.header-tabel__cell:first-child {
+  border-left: 1px solid #000;
+}
+
+.header-checkbox {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.header-tabel__checkbox-text {
+  padding: 0;
+  margin: 0;
+}
