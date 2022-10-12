@@ -118,10 +118,10 @@
   ],
   "coworkers": [
     {
-      "id": 3,
       "name": "Иван",
       "lastname": "Иванов",
-      "position": "Тестировщик",
+      "id": 3,
+      "position": "developer",
       "company": "Base"
     },
     {

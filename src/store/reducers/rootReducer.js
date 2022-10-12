@@ -4,7 +4,6 @@ import { coworkersReducer } from './coworkersReduser';
 import { checkedCompaniesReduser } from './checkedCompaniesReduser';
 import { selectedCoworkersReduser } from './selectedCoworkersReduser';
 import { checkedCoworkersReduser } from './checkedCoworkersReduser';
-import { updatingCoworkerReduser } from './updatingCoworkerReduser';
 
 export const rootReduser = combineReducers({
   companies: companiesReducer,
@@ -12,5 +11,4 @@ export const rootReduser = combineReducers({
   checkedCompanies: checkedCompaniesReduser,
   selectedCoworkers: selectedCoworkersReduser,
   checkedCoworkers: checkedCoworkersReduser,
-  updatingCoworker: updatingCoworkerReduser,
 });

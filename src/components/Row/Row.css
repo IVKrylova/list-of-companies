@@ -51,3 +51,15 @@
 .row__error_type_addressCompany {
   grid-column: 4 / 5;
 }
+
+.row__error_type_lastnameCoworker {
+  grid-column: 2 / 3;
+}
+
+.row__error_type_nameCoworker {
+  grid-column: 3 / 4;
+}
+
+.row__error_type_positionCoworker {
+  grid-column: 4 / 5;
+}

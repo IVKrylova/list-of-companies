@@ -21,6 +21,7 @@ const TableCoworkers = props => {
       <ListCoworkers
         coworkers={selectedCoworkers}
         onClickCheckbox={props.onClickCheckboxCoworker}
+        sentUpdateCoworker={props.sentUpdateCoworker}
       />
     </Table>
   );

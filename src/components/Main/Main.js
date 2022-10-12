@@ -26,6 +26,7 @@ const Main = props => {
           addNewCoworker={props.addNewCoworker}
           onClickButtonDelete={props.onClickDeleteCoworker}
           onClickCheckboxCoworker={props.onClickCheckboxCoworker}
+          sentUpdateCoworker={props.sentUpdateCoworker}
         />
         <TableAddCoworker
           sentDataRow={props.sentDataCoworker}

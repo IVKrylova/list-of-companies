@@ -12,6 +12,7 @@ const ListCoworkers = props => {
           lastname={coworker.lastname}
           name={coworker.name}
           position={coworker.position}
+          sentUpdateCoworker={props.sentUpdateCoworker}
         />
        )
     })
