@@ -1,7 +1,7 @@
 import './Button.css';
 
 const Button = props => {
-  const disabled = props.buttonText === 'Добавить' || props.buttonText === 'Добавить' ? !props.isValid : props.disabled;
+  const disabled = props.buttonText === 'Добавить' || props.buttonText === 'Сохранить' ? !props.isValid : props.disabled;
 
   return (
     <button

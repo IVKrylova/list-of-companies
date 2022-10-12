@@ -9,8 +9,6 @@ const Row = props => {
 
   const [ values, setValues ] = useState({});
 
-  const cellClassName = `row__cell ${props.cellClassModifier ? props.cellClassModifier : ''} ${props.checked ? 'row__cell_checked' : ''}`;
-
   const handleClickCheckbox = _ => {
     props.company && props.onClickCheckbox(props.company);
     props.coworker && props.onClickCheckbox(props.coworker);
@@ -33,12 +31,6 @@ const Row = props => {
 
   }, []);
 
-  const handleChange = evt => {
-    const {name, value} = evt.target;
-
-    setValues({...values, [name]: value });
-  }
-
   useEffect(_ => {
     props.company && dispatch(updateCompany(values));
     props.coworker && dispatch(updateCoworker(values));
@@ -46,39 +38,14 @@ const Row = props => {
 
   return (
     <fieldset className='row'>
-      <label className={cellClassName}>
+      <label className={`row__cell ${props.checked ? 'row__cell_checked' : ''}`}>
         <input
           type='checkbox'
-          id={`${props.formName}-checkbox`}
-          name={`${props.formName}-checkbox`}
           checked={props.checked}
           onChange={handleClickCheckbox}
         />
       </label>
-      <textarea
-        className={`${cellClassName} row__cell_textarea`}
-        readOnly={props.editingSecondCell}
-        defaultValue={props.secondCell}
-        name={props.nameSecondCell}
-        onChange={handleChange}
-      >
-      </textarea>
-      <textarea
-        className={`${cellClassName} row__cell_textarea`}
-        readOnly={props.editingThirdCell}
-        defaultValue={props.thirdCell}
-        name={props.nameThirdCell}
-        onChange={handleChange}
-      >
-      </textarea>
-      <textarea
-        className={`${cellClassName} row__cell_textarea`}
-        readOnly={props.editingFourthCell}
-        defaultValue={props.fourthCell}
-        name={props.nameFourthCell}
-        onChange={handleChange}
-      >
-      </textarea>
+      {props.children}
     </fieldset>
   );
 }
