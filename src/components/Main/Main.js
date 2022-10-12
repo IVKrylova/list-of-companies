@@ -17,6 +17,7 @@ const Main = props => {
         />
         <TableAddCompany
           sentDataRow={props.sentDataCompany}
+          errorMessage={props.errorMessage}
         />
       </section>
       <section className='coworkers'>

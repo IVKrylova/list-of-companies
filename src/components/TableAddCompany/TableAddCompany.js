@@ -22,6 +22,7 @@ const TableAddCompany = props => {
       tableAddHeader='Добавить компанию'
       isValid={isValid}
       values={values}
+      errorMessage={props.errorMessage}
       headerTable={
         <>
           <li className='table-add__cell'>Имя</li>

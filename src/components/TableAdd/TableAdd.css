@@ -62,3 +62,13 @@
 .input__error_active {
   display: block;
 }
+
+.table-add__error {
+  font-size: 12px;
+  color: red;
+  display: none;
+}
+
+.table-add__error_visible {
+  display: block;
+}

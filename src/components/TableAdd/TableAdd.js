@@ -23,6 +23,9 @@ const TableAdd = props => {
           buttonText='Добавить'
           type='submit'
         />
+        <span className={`table-add__error ${props.errorMessage ? 'table-add__error_visible' : ''}`}>
+          {props.errorMessage}
+        </span>
       </form>
     </div>
   );
