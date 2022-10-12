@@ -5,3 +5,8 @@
   margin-top: 10px;
   margin-bottom: 20px;
 }
+
+.button_place_main-table {
+  grid-row: 1 / 2;
+  grid-column: 5 / 6;
+}

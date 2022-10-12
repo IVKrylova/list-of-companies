@@ -6,7 +6,7 @@ const Button = props => {
   return (
     <button
       type={props.type}
-      className={`button ${disabled ? 'button_disabled' : ''}`}
+      className={`button ${disabled ? 'button_disabled' : ''} ${props.classModifier ? props.classModifier : ''}`}
       disabled={disabled}
       onClick={props.onClickButtonDelete}
     >

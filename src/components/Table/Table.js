@@ -12,7 +12,7 @@ const Table = props => {
   return (
     <div className={`main-table ${selectedCoworkers.length === 0 && props.tableName === 'coworkers' ? 'main-table_hidden' : ''}`}>
       <h2 className='main-table__title'>{props.title}</h2>
-      <form className='form' id={props.tableName} name={props.tableName} onSubmit={props.onSubmitForm}>
+      <div className='table' id={props.tableName} name={props.tableName} onSubmit={props.onSubmitForm}>
         <HeaderTable
           secondCell={props.secondColumn}
           thirdCell={props.thirdColumn}
@@ -22,24 +22,13 @@ const Table = props => {
         />
         {/* Данные таблицы */}
         {props.children}
-        <ul className='buttons'>
-          <li>
-            <Button
-              disabled={false}
-              buttonText='Сохранить'
-              type='submit'
-            />
-          </li>
-          <li>
-            <Button
-              disabled={!props.isChecked}
-              buttonText='Удалить'
-              type='button'
-              onClickButtonDelete={props.onClickButtonDelete}
-            />
-          </li>
-        </ul>
-      </form>
+        <Button
+          disabled={!props.isChecked}
+          buttonText='Удалить'
+          type='button'
+          onClickButtonDelete={props.onClickButtonDelete}
+        />
+      </div>
     </div>
   );
 }

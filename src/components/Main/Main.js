@@ -13,6 +13,7 @@ const Main = props => {
           onSubmitForm={props.onUpdateCompany}
           onClickButtonDelete={props.onClickDeleteCompany}
           onClickCheckboxCompany={props.onClickCheckboxCompany}
+          sentUpdateCompany={props.sentUpdateCompany}
         />
         <TableAddCompany
           sentDataRow={props.sentDataCompany}

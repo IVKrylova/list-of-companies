@@ -21,6 +21,7 @@ const TableCompanies = props => {
       <ListCompanies
         companies={companies}
         onClickCheckbox={props.onClickCheckboxCompany}
+        sentUpdateCompany={props.sentUpdateCompany}
       />
     </Table>
   );

@@ -15,6 +15,7 @@ const ListCompanies = props => {
           checked={company.checked}
           onClickCheckbox={props.onClickCheckbox}
           company={company}
+          sentUpdateCompany={props.sentUpdateCompany}
         />
        )
     })

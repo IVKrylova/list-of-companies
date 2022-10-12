@@ -1,22 +1,31 @@
 import Row from '../Row/Row';
 import { useFormAndValidation } from '../../hooks/useFormAndValidation';
+import { useEffect } from 'react';
 
 const RowCompany = props => {
-  const { values, handleChange, errors, isValid, resetForm, setIsValid } = useFormAndValidation();
+  const { values, handleChange, errors, isValid, setIsValid, setValues, resetForm } = useFormAndValidation();
 
   const classNameTextares = `row__cell row__cell_textarea ${props.checked ? 'row__cell_checked' : ''}`;
 
-
+  useEffect(_ => {
+    setValues(props.company);
+    setIsValid(false);
+  }, []);
 
   return (
     <Row
       checked={props.checked}
       onClickCheckbox={props.onClickCheckbox}
-      company={props.company || values.company}
+      company={props.company}
+      isValid={isValid}
+      values={values}
+      sentUpdateData={props.sentUpdateCompany}
+      resetForm={resetForm}
     >
       <textarea
         className={classNameTextares}
-        defaultValue={props.name || values.name}
+        defaultValue={props.name}
+        value={values.name}
         name='name'
         onChange={handleChange}
         required={true}
@@ -28,12 +37,12 @@ const RowCompany = props => {
         readOnly={true}
         defaultValue={props.count}
         name='count'
-        onChange={handleChange}
       >
       </textarea>
       <textarea
         className={classNameTextares}
         defaultValue={props.address}
+        value={values.address}
         name='address'
         onChange={handleChange}
         required={true}
