@@ -7,6 +7,10 @@ const RowCoworker = props => {
 
   const classNameTextares = `row__cell row__cell_textarea ${props.checked ? 'row__cell_checked' : ''}`;
 
+  const handleClickCheckbox = _ => {
+    props.coworker && props.onClickCheckbox(props.coworker);
+  }
+
   useEffect(_ => {
     setValues(props.coworker);
     setIsValid(false);
@@ -15,7 +19,7 @@ const RowCoworker = props => {
   return (
     <Row
       coworker={props.coworker}
-      onClickCheckbox={props.onClickCheckbox}
+      onClickCheckbox={handleClickCheckbox}
       checked={props.checked}
       isValid={isValid}
       values={values}

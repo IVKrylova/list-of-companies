@@ -12,10 +12,14 @@ const RowCompany = props => {
     setIsValid(false);
   }, []);
 
+  const handleClickCheckbox = _ => {
+    props.company && props.onClickCheckbox(props.company);
+  }
+
   return (
     <Row
       checked={props.checked}
-      onClickCheckbox={props.onClickCheckbox}
+      onClickCheckbox={handleClickCheckbox}
       company={props.company}
       isValid={isValid}
       values={values}

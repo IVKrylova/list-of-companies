@@ -2,10 +2,10 @@ import Button from '../Button/Button';
 import './Row.css';
 
 const Row = props => {
-  const handleClickCheckbox = _ => {
+  /* const handleClickCheckbox = _ => {
     props.company && props.onClickCheckbox(props.company);
     props.coworker && props.onClickCheckbox(props.coworker);
-  }
+  } */
 
   const hendleSubmitForm = evt => {
     evt.preventDefault();
@@ -20,7 +20,7 @@ const Row = props => {
         <input
           type='checkbox'
           checked={props.checked}
-          onChange={handleClickCheckbox}
+          onChange={props.onClickCheckbox}
         />
       </label>
       {props.children}
