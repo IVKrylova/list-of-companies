@@ -54,7 +54,7 @@ const Main = props => {
           />
         </Table>
         <TableAddCoworker
-          addNewCoworker={props.addNewCoworker}
+          sentDataRow={props.sentDataCoworker}
         />
       </section>
     </main>
