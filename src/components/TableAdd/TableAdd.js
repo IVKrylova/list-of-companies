@@ -2,6 +2,12 @@ import Button from '../Button/Button';
 import './TableAdd.css';
 
 const TableAdd = props => {
+  const handleSubmit = evt => {
+    evt.preventDefault();
+
+    props.sentDataRow(props.values);
+  }
+
   return (
     <div className='table-add'>
       <h2 className='table-add__title'>
@@ -10,10 +16,10 @@ const TableAdd = props => {
       <ul className={`table-add__header ${props.classModifierHeader ? props.classModifierHeader : ''}`}>
         {props.headerTable}
       </ul>
-      <form className={`table-add__form ${props.classModifierForm ? props.classModifierForm : ''}`} onSubmit={props.addNewRow}>
+      <form className={`form table-add__form ${props.classModifierForm ? props.classModifierForm : ''}`} onSubmit={handleSubmit}>
         {props.bodyTable}
         <Button
-          disabled={props.disabled}
+          isValid={props.isValid}
           buttonText='Добавить'
           type='submit'
         />

@@ -32,7 +32,7 @@ const Main = props => {
           />
         </Table>
         <TableAddCompany
-          addNewCompany={props.addNewCompany}
+          sentDataRow={props.sentDataCompany}
         />
       </section>
       <section className='coworkers'>

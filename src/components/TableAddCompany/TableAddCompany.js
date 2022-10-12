@@ -1,28 +1,27 @@
-import { useState, useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import { addCompany } from '../../store/actionCreators/newCompany';
+import { useEffect } from 'react';
+import { useSelector } from 'react-redux';
 import TableAdd from '../TableAdd/TableAdd';
+import { useFormAndValidation } from '../../hooks/useFormAndValidation';
 
 const TableAddCompany = props => {
-  const [ values, setValues ] = useState({});
+  const { values, handleChange, errors, isValid, resetForm, setIsValid } = useFormAndValidation();
 
-  const dispatch = useDispatch();
-
-  const handleChange = evt => {
-    const {name, value} = evt.target;
-
-    setValues({...values, [name]: value });
-  }
+  const companies = useSelector(store => store.companies.companies);
 
   useEffect(_ => {
-    dispatch(addCompany(values));
-  }, [values]);
+    setIsValid(false);
+  }, []);
+
+  useEffect(_ => {
+    resetForm();
+  }, [companies]);
 
   return (
     <TableAdd
-      disabled={!values.name && !values.address}
-      addNewRow={props.addNewCompany}
+      sentDataRow={props.sentDataRow}
       tableAddHeader='Добавить компанию'
+      isValid={isValid}
+      values={values}
       headerTable={
         <>
           <li className='table-add__cell'>Имя</li>
@@ -37,6 +36,8 @@ const TableAddCompany = props => {
             value={values.name || ''}
             name='name'
             onChange={handleChange}
+            required={true}
+            minLength='2'
           />
           <input
             className='table-add__cell input'
@@ -44,7 +45,15 @@ const TableAddCompany = props => {
             value={values.address || ''}
             name='address'
             onChange={handleChange}
+            required={true}
+            minLength='10'
           />
+          <span className={`input__error ${!isValid ? 'input__error_active' : ''}`}>
+            {!isValid && errors.name}
+          </span>
+          <span className={`input__error ${!isValid ? 'input__error_active' : ''}`}>
+            {!isValid && errors.address}
+          </span>
         </>
       }
     />

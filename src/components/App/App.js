@@ -50,7 +50,6 @@ const App = _ => {
   const checkedCoworkers = useSelector(store => store.checkedCoworkers.checkedCoworkers);
   const updatingCompany = useSelector(store => store.updatingCompany.data);
   const updatingCoworker = useSelector(store => store.updatingCoworker.data);
-  const newCompany = useSelector(store => store.newCompany.company);
   const newCoworker = useSelector(store => store.newCoworker.coworker);
 
   const dispatch = useDispatch();
@@ -182,10 +181,8 @@ const App = _ => {
       .catch(err => console.log(err));
   }
 
-  const handleAddNewCompany = evt => {
-    evt.preventDefault();
-
-    mainApi.addCompany(newCompany)
+  const handleAddCompany = company => {
+    mainApi.addCompany(company)
       .then(res => {
         res.checked = false;
         dispatch(addNewCompanyToStore(companies, res));
@@ -246,7 +243,7 @@ const App = _ => {
         onClickCheckboxAllCoworkers={handleClickCheckboxAllCoworkers}
         onUpdateCompany={handleUpdateCompany}
         onUpdateCoworker={handleUpdateCoworker}
-        addNewCompany={handleAddNewCompany}
+        sentDataCompany={handleAddCompany}
         addNewCoworker={handleAddNewCoworker}
         onClickDeleteCompany={handleClickDeleteCompany}
         onClickDeleteCoworker={handleClickDeleteCoworker}
