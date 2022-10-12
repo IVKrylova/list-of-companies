@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import Button from '../Button/Button';
 import { addNewCoworker } from '../../store/actionCreators/newCoworker';
-import './TableAddCoworker.css';
+import TableAdd from '../TableAdd/TableAdd';
 
 const TableAddCoworker = props => {
   const [ values, setValues ] = useState({});
@@ -20,49 +19,53 @@ const TableAddCoworker = props => {
   }, [values]);
 
   return (
-    <div className='table-add-coworker'>
-      <ul className='table-add-coworker__header'>
-        <li className='table-add-coworker__cell'>Имя</li>
-        <li className='table-add-coworker__cell'>Фамилия</li>
-        <li className='table-add-coworker__cell'>Должность</li>
-        <li className='table-add-coworker__cell'>Компания</li>
-      </ul>
-      <form className='table-add-coworker__form' onSubmit={props.addNewCoworker}>
-        <input
-          className='table-add-coworker__cell input-coworker'
-          type='text'
-          value={values.name || ''}
-          name='name'
-          onChange={handleChange}
-        />
-        <input
-          className='table-add-coworker__cell input-coworker'
-          type='text'
-          value={values.lastname || ''}
-          name='lastname'
-          onChange={handleChange}
-        />
-        <input
-          className='table-add-coworker__cell input-coworker'
-          type='text'
-          value={values.position || ''}
-          name='position'
-          onChange={handleChange}
-        />
-        <input
-          className='table-add-coworker__cell input-coworker'
-          type='text'
-          value={values.company || ''}
-          name='company'
-          onChange={handleChange}
-        />
-        <Button
-          disabled={!values.name}
-          buttonText='Добавить'
-          type='submit'
-        />
-      </form>
-    </div>
+    <TableAdd
+      disabled={!values.name}
+      addNewRow={props.addNewCoworker}
+      tableAddHeader='Добавить сотрудника'
+      classModifierForm='table-add__form_place_coworkers'
+      classModifierHeader='table-add__header_place_coworkers'
+      headerTable={
+        <>
+          <li className='table-add__cell'>Имя</li>
+          <li className='table-add__cell'>Фамилия</li>
+          <li className='table-add__cell'>Должность</li>
+          <li className='table-add__cell'>Компания</li>
+        </>
+      }
+      bodyTable={
+        <>
+          <input
+            className='table-add__cell input'
+            type='text'
+            value={values.name || ''}
+            name='name'
+            onChange={handleChange}
+          />
+          <input
+            className='table-add__cell input'
+            type='text'
+            value={values.lastname || ''}
+            name='lastname'
+            onChange={handleChange}
+          />
+          <input
+            className='table-add__cell input'
+            type='text'
+            value={values.position || ''}
+            name='position'
+            onChange={handleChange}
+          />
+          <input
+            className='table-add__cell input'
+            type='text'
+            value={values.company || ''}
+            name='company'
+            onChange={handleChange}
+          />
+        </>
+      }
+    />
   );
 }
 

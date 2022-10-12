@@ -1,8 +1,8 @@
-.table_hidden {
+.main-table_hidden {
   display: none;
 }
 
-.table__title {
+.main-table__title {
   margin: 0;
   font-size: 18px;
   width: 100%;

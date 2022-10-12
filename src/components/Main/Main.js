@@ -2,6 +2,8 @@ import { useSelector } from 'react-redux';
 import ListCompanies from '../ListCompanies/ListCompanies';
 import ListCoworkers from '../ListCoworkers/ListCoworkers';
 import Table from '../Table/Table';
+import TableAddCompany from '../TableAddCompany/TableAddCompany';
+import TableAddCoworker from '../TableAddCoworker/TableAddCoworker';
 import './Main.css';
 
 const Main = props => {
@@ -12,40 +14,49 @@ const Main = props => {
 
   return (
     <main className='content'>
-      <Table
-        title='Компании'
-        tableName='companies'
-        secondColumn='Название компании'
-        thirdColumn='Кол-во сотрудников'
-        fourthColumn='Адрес'
-        isChecked={!!checkedCompanies.length}
-        onClickCheckbox={props.onClickCheckboxAllCompanies}
-        onSubmitForm={props.onUpdateCompany}
-        addNewCompany={props.addNewCompany}
-        onClickButtonDelete={props.onClickDeleteCompany}
-      >
-        <ListCompanies
-          companies={companies}
-          onClickCheckbox={props.onClickCheckboxCompany}
+      <section className='companies'>
+        <Table
+          title='Компании'
+          tableName='companies'
+          secondColumn='Название компании'
+          thirdColumn='Кол-во сотрудников'
+          fourthColumn='Адрес'
+          isChecked={!!checkedCompanies.length}
+          onClickCheckbox={props.onClickCheckboxAllCompanies}
+          onSubmitForm={props.onUpdateCompany}
+          onClickButtonDelete={props.onClickDeleteCompany}
+        >
+          <ListCompanies
+            companies={companies}
+            onClickCheckbox={props.onClickCheckboxCompany}
+          />
+        </Table>
+        <TableAddCompany
+          addNewCompany={props.addNewCompany}
         />
-      </Table>
-      <Table
-        title='Сотрудники'
-        tableName='coworkers'
-        secondColumn='Фамилия'
-        thirdColumn='Имя'
-        fourthColumn='Должность'
-        onClickCheckbox={props.onClickCheckboxAllCoworkers}
-        onSubmitForm={props.onUpdateCoworker}
-        addNewCoworker={props.addNewCoworker}
-        onClickButtonDelete={props.onClickDeleteCoworker}
-        isChecked={!!checkedCoworkers.length}
-      >
-        <ListCoworkers
-          coworkers={selectedCoworkers}
-          onClickCheckbox={props.onClickCheckboxCoworker}
+      </section>
+      <section className='coworkers'>
+        <Table
+          title='Сотрудники'
+          tableName='coworkers'
+          secondColumn='Фамилия'
+          thirdColumn='Имя'
+          fourthColumn='Должность'
+          onClickCheckbox={props.onClickCheckboxAllCoworkers}
+          onSubmitForm={props.onUpdateCoworker}
+          addNewCoworker={props.addNewCoworker}
+          onClickButtonDelete={props.onClickDeleteCoworker}
+          isChecked={!!checkedCoworkers.length}
+        >
+          <ListCoworkers
+            coworkers={selectedCoworkers}
+            onClickCheckbox={props.onClickCheckboxCoworker}
+          />
+        </Table>
+        <TableAddCoworker
+          addNewCoworker={props.addNewCoworker}
         />
-      </Table>
+      </section>
     </main>
   );
 }
