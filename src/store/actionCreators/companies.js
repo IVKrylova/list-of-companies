@@ -3,12 +3,7 @@ import { companiesActionTypes } from '../actionTypes/companies';
 export const getCompanies = companies => {
   return {
     type: companiesActionTypes.GET_COMPANIES,
-    payload: companies.map(company => {
-      const row = JSON.parse(JSON.stringify(company));
-      row.checked = false;
-
-      return row;
-    }),
+    payload: companies.map(company => company),
   }
 }
 

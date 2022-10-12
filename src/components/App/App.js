@@ -98,7 +98,13 @@ const App = _ => {
         return res.res;
       })
         .then(res => {
-          dispatch(getCompanies([...companies, ...res].flat()));
+          const gettingCompanies = res.map(el => {
+            el.checked = false;
+
+            return el;
+          });
+
+          dispatch(getCompanies([...companies, ...gettingCompanies].flat()));
           setCurrentPage(currentPage + 1);
         })
         .catch(err => console.log(err))
