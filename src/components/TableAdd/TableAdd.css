@@ -14,10 +14,11 @@
 }
 
 .table-add__title {
-  font-size: 16px;
-  margin: 0;
+  font-size: 18px;
+  margin: 0 0 15px;
   padding: 0;
   text-align: center;
+  color: #05386b;
 }
 
 .table-add__header_place_coworkers {
@@ -29,6 +30,7 @@
   border: none;
   border: none;
   border-bottom: #000 1px solid;
+  background-color: #7fc7b9;
 }
 
 .table-add__cell {
@@ -55,7 +57,7 @@
 
 .input__error {
   font-size: 12px;
-  color: red;
+  color: #a60202;
   display: none;
 }
 
@@ -65,7 +67,7 @@
 
 .table-add__error {
   font-size: 12px;
-  color: red;
+  color: #a60202;
   display: none;
 }
 

@@ -2,11 +2,46 @@
   display: block;
   box-sizing: border-box;
   font-size: 12px;
-  margin-top: 10px;
-  margin-bottom: 20px;
+  margin: 15px 5px;
+  padding: 5px;
+  overflow: hidden;
+  border: 2px solid;
+  border-bottom-width: 4px;
+  text-transform: uppercase;
+  color: #05386b;
+  background: #41b3a3;
+  transition: color .3s, background .5s;
 }
 
 .button_place_main-table {
   grid-row: 1 / 2;
   grid-column: 5 / 6;
+}
+
+.button:hover {
+  animation: stripes .75s infinite linear;
+  background: linear-gradient(45deg, #8ee4af 25%, #fff 25%, #fff 50%, #8ee4af 50%, #8ee4af 75%, #fff 75%, #fff);
+  background-size: 10px 10px;
+  color: #112d32;
+  cursor: pointer;
+}
+
+@keyframes stripes {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 50px 0;
+  }
+}
+
+.button_disabled {
+  background-color: #c5c6c7;
+  color: #1f2833;
+}
+
+.button_disabled:hover {
+  cursor: default;
+  animation: none;
+  background: #c5c6c7;
 }

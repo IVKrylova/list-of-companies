@@ -1,1 +1,5 @@
 @import url(./vendor/normalize.css);
+
+#root {
+  background-color: #7fc7b9;
+}

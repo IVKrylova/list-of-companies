@@ -8,16 +8,17 @@
   border: none;
 }
 
-.row__cell_checked {
-  background-color: #5a5e88;
-}
-
 .row__cell {
   box-sizing: border-box;
   border-right: 1px solid #000;
   border-bottom: 1px solid #000;
   font-size: 12px;
   padding: 5px;
+  background-color: #7fc7b9;
+}
+
+.row__cell_checked {
+  background-color: #b8f2d3;
 }
 
 .row__cell_textarea {
@@ -35,7 +36,7 @@
 }
 
 .row__error {
-  color: red;
+  color: #a60202;
   display: none;
   font-size: 12px;
 }
