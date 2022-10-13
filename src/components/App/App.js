@@ -60,7 +60,7 @@ const App = _ => {
     const documentHeight = document.body.offsetHeight;
     const screenHeight = window.innerHeight;
     const scroll = window.scrollY;
-    const limit = documentHeight - screenHeight / 5;
+    const limit = documentHeight - screenHeight / 4;
     const position = scroll + screenHeight;
 
     if (position >= limit && companies.length <= totalCount) {

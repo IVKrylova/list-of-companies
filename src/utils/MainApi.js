@@ -1,5 +1,6 @@
 import { checkResponse } from './utils';
 import { mainOptions } from './constants';
+import { LIMIT } from './constants';
 
 class MainApi {
   constructor(options) {
@@ -8,7 +9,7 @@ class MainApi {
   }
 
   getCompanies(page) {
-    return fetch(`${this.baseUrl}/companies?_page=${page}`, {
+    return fetch(`${this.baseUrl}/companies?_page=${page}&_limit=${LIMIT}`, {
       method: 'GET',
       headers: this.headers,
     })

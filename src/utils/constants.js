@@ -6,3 +6,5 @@ export const mainOptions = {
     'Content-Type': 'application/json',
   }
 }
+
+export const LIMIT = 35;
