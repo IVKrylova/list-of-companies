@@ -24,6 +24,7 @@ const TableAddCoworker = props => {
       tableAddHeader='Добавить сотрудника'
       classModifierForm='table-add__form_place_coworkers'
       classModifierHeader='table-add__header_place_coworkers'
+      errorMessage={props.errorMessage}
       headerTable={
         <>
           <li className='table-add__cell'>Имя</li>

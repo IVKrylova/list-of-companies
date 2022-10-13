@@ -31,11 +31,6 @@
       "id": 8
     },
     {
-      "name": "Test",
-      "address": "г. Томск, ул. Мира, д.1",
-      "id": 9
-    },
-    {
       "name": "Slot",
       "address": "г. Томск, ул. Мира, д.1",
       "id": 10
@@ -314,13 +309,6 @@
       "company": "Baikal",
       "position": "developer",
       "id": 45
-    },
-    {
-      "name": "Line",
-      "lastname": "Крылова",
-      "company": "developer",
-      "position": "Ирина",
-      "id": 46
     },
     {
       "name": "Ирина",

@@ -52,7 +52,8 @@ const App = _ => {
   const [currentPage, setCurrentPage] = useState(1);
   const [fetching, setFetching] = useState(true);
   const [totalCount, setTotalCount] = useState(0);
-  const [errorMessage, setErrorMessage] = useState('');
+  const [errorMessageAddingCompany, setErrorMessageAddingCompany] = useState('');
+  const [errorMessageAddingCoworker, setErrorMessageAddingCoworker] = useState('');
 
   const handleScroll = _ => {
     const documentHeight = document.body.offsetHeight;
@@ -182,8 +183,7 @@ const App = _ => {
 
   const handleAddCompany = company => {
     if (companies.some(el => el.name === company.name)) {
-      setErrorMessage('Такая компания уже есть в списке');
-
+      setErrorMessageAddingCompany('Такая компания уже есть в списке');
       throw Error('Такая компания уже есть в списке');
     }
 
@@ -191,11 +191,17 @@ const App = _ => {
       .then(res => {
         res.checked = false;
         dispatch(addNewCompanyToStore(companies, res));
+        setErrorMessageAddingCompany('');
       })
       .catch(err => console.log(err));
   }
 
   const handleAddCoworker = coworker => {
+    if (companies.every(el => el.name !== coworker.company)) {
+      setErrorMessageAddingCoworker('Такой компании нет в списке');
+      throw Error('Такой компании нет в списке');
+    }
+
     mainApi.addCoworker(coworker)
       .then(res => {
         res.checked = false;
@@ -250,7 +256,8 @@ const App = _ => {
         sentDataCoworker={handleAddCoworker}
         onClickDeleteCompany={handleClickDeleteCompany}
         onClickDeleteCoworker={handleClickDeleteCoworker}
-        errorMessage={errorMessage}
+        errorMessageAddingCompany={errorMessageAddingCompany}
+        errorMessageAddingCoworker={errorMessageAddingCoworker}
       />
       <Footer />
     </div>

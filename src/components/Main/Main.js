@@ -17,7 +17,7 @@ const Main = props => {
         />
         <TableAddCompany
           sentDataRow={props.sentDataCompany}
-          errorMessage={props.errorMessage}
+          errorMessage={props.errorMessageAddingCompany}
         />
       </section>
       <section className='coworkers'>
@@ -31,6 +31,7 @@ const Main = props => {
         />
         <TableAddCoworker
           sentDataRow={props.sentDataCoworker}
+          errorMessage={props.errorMessageAddingCoworker}
         />
       </section>
     </main>
