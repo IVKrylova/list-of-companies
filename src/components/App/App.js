@@ -43,14 +43,12 @@ import {
 } from '../../store/actionCreators/checkedCoworkers';
 
 const App = _ => {
+  const dispatch = useDispatch();
   const companies = useSelector(store => store.companies.companies);
   const checkedCompanies = useSelector(store => store.checkedCompanies.checkedCompanies);
   const coworkers = useSelector(store => store.coworkers.coworkers);
   const selectedCoworkers = useSelector(store => store.selectedCoworkers.selectedCoworkers);
   const checkedCoworkers = useSelector(store => store.checkedCoworkers.checkedCoworkers);
-
-  const dispatch = useDispatch();
-
   const [currentPage, setCurrentPage] = useState(1);
   const [fetching, setFetching] = useState(true);
   const [totalCount, setTotalCount] = useState(0);

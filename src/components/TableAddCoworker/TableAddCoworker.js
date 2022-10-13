@@ -70,6 +70,18 @@ const TableAddCoworker = props => {
             name='company'
             onChange={handleChange}
           />
+          <span className={`input__error ${!isValid ? 'input__error_active' : ''}`}>
+            {!isValid && errors.name}
+          </span>
+          <span className={`input__error ${!isValid ? 'input__error_active' : ''}`}>
+            {!isValid && errors.lastname}
+          </span>
+          <span className={`input__error ${!isValid ? 'input__error_active' : ''}`}>
+            {!isValid && errors.position}
+          </span>
+          <span className={`input__error ${!isValid ? 'input__error_active' : ''}`}>
+            {!isValid && errors.company}
+          </span>
         </>
       }
     />

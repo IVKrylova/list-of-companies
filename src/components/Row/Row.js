@@ -2,11 +2,6 @@ import Button from '../Button/Button';
 import './Row.css';
 
 const Row = props => {
-  /* const handleClickCheckbox = _ => {
-    props.company && props.onClickCheckbox(props.company);
-    props.coworker && props.onClickCheckbox(props.coworker);
-  } */
-
   const hendleSubmitForm = evt => {
     evt.preventDefault();
 
