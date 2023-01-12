@@ -1,18 +1,13 @@
 {
   "companies": [
     {
-      "name": "Base",
-      "address": "г. Томск, пр. Ленина, д.1",
-      "id": 3
-    },
-    {
       "name": "Baikal",
-      "address": "г. Москва, ул. Заломова, д.5",
+      "address": "г. Москва, ул. Заломова, д.9",
       "id": 4
     },
     {
       "name": "Ideas",
-      "address": "г. Москва, ул. Ленина, д.5",
+      "address": "г. Москва, ул. Ленина, д.8",
       "id": 5
     },
     {
@@ -22,7 +17,7 @@
     },
     {
       "name": "Link",
-      "address": "ул. Заломова, 15",
+      "address": "ул. Заломова, 16",
       "id": 7
     },
     {
@@ -96,37 +91,23 @@
       "id": 22
     },
     {
-      "name": "Volcano",
-      "address": "ул. Заломова, д. 8",
-      "id": 23
-    },
-    {
       "name": "Sky",
       "address": "г. Павлово, ул. Мира, д.4",
       "id": 24
+    },
+    {
+      "name": "Sql",
+      "address": "г. Москва, ул. Ленина, д.5",
+      "id": 25
     }
   ],
   "coworkers": [
     {
       "name": "Иван",
-      "lastname": "Иванов",
-      "id": 3,
-      "position": "developer",
-      "company": "Base"
-    },
-    {
-      "id": 13,
-      "name": "Иван",
-      "lastname": "Иванов",
-      "position": "Тестировщик",
-      "company": "Base"
-    },
-    {
-      "name": "Иван",
-      "lastname": "Иванов",
-      "company": "Ideas",
+      "lastname": "Ивано",
+      "id": 18,
       "position": "Разработчик",
-      "id": 18
+      "company": "Ideas"
     },
     {
       "name": "Иван",
@@ -162,13 +143,6 @@
       "company": "Link",
       "position": "Разработчик",
       "id": 23
-    },
-    {
-      "name": "Ирина",
-      "lastname": "Крылова",
-      "company": "Link",
-      "position": "Разработчик",
-      "id": 24
     },
     {
       "name": "Ирина",
@@ -220,76 +194,6 @@
       "id": 32
     },
     {
-      "name": "Иван",
-      "lastname": "Иванов",
-      "company": "Base",
-      "position": "Тестировщик",
-      "id": 33
-    },
-    {
-      "name": "Иван",
-      "lastname": "Иванов",
-      "company": "Base",
-      "position": "Тестировщик",
-      "id": 34
-    },
-    {
-      "name": "Иван",
-      "lastname": "Иванов",
-      "company": "Base",
-      "position": "Тестировщик",
-      "id": 35
-    },
-    {
-      "name": "Иван",
-      "lastname": "Иванов",
-      "company": "Base",
-      "position": "Тестировщик",
-      "id": 36
-    },
-    {
-      "name": "Иван",
-      "lastname": "Иванов",
-      "company": "Base",
-      "position": "Тестировщик",
-      "id": 37
-    },
-    {
-      "name": "Иван",
-      "lastname": "Иванов",
-      "company": "Base",
-      "position": "Тестировщик",
-      "id": 38
-    },
-    {
-      "name": "Иван",
-      "lastname": "Иванов",
-      "company": "Base",
-      "position": "Тестировщик",
-      "id": 39
-    },
-    {
-      "name": "Иван",
-      "lastname": "Иванов",
-      "company": "Base",
-      "position": "Тестировщик",
-      "id": 40
-    },
-    {
-      "name": "Иван",
-      "lastname": "Иванов",
-      "company": "Base",
-      "position": "Тестировщик",
-      "id": 41
-    },
-    {
-      "name": "Иван",
-      "lastname": "Иванов",
-      "company": "Base",
-      "position": "Тестировщик",
-      "id": 42
-    },
-    {
       "name": "Ирина",
       "lastname": "Крылова",
       "company": "Line",
@@ -316,6 +220,13 @@
       "company": "Line",
       "position": "develope",
       "id": 47
+    },
+    {
+      "name": "Ирина",
+      "lastname": "Крылова",
+      "id": 48,
+      "position": "developer",
+      "company": "Ivanovo"
     }
   ]
 }

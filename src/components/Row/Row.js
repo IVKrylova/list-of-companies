@@ -12,11 +12,11 @@ const Row = props => {
   return (
     <form className='row' onSubmit={hendleSubmitForm}>
       <label className={`row__cell ${props.checked ? 'row__cell_checked' : ''}`}>
-        <input
+        {<input
           type='checkbox'
           checked={props.checked}
           onChange={props.onClickCheckbox}
-        />
+        />}
       </label>
       {props.children}
       <Button

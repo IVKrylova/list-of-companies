@@ -93,22 +93,22 @@ const App = _ => {
   useEffect(_ => {
     if (fetching) {
       mainApi.getCompanies(currentPage)
-      .then(res => {
-        setTotalCount(res.headerTotalCount);
-        return res.res;
-      })
         .then(res => {
-          const gettingCompanies = res.map(el => {
-            el.checked = false;
-
-            return el;
-          });
-
-          dispatch(getCompanies([...companies, ...gettingCompanies].flat()));
-          setCurrentPage(currentPage + 1);
+          setTotalCount(res.headerTotalCount);
+          return res.res;
         })
-        .catch(err => console.log(err))
-        .finally(_ => setFetching(false));
+          .then(res => {
+            const gettingCompanies = res.map(el => {
+              el.checked = el.checked ? true : false;
+
+              return el;
+            });
+
+            dispatch(getCompanies([...companies, ...gettingCompanies].flat()));
+            setCurrentPage(currentPage + 1);
+          })
+          .catch(err => console.log(err))
+          .finally(_ => setFetching(false));
     }
   }, [fetching]);
 

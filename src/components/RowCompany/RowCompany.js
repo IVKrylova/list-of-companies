@@ -18,7 +18,7 @@ const RowCompany = props => {
 
   return (
     <Row
-      checked={props.checked}
+      checked={props.checked ? true : false}
       onClickCheckbox={handleClickCheckbox}
       company={props.company}
       isValid={isValid}
