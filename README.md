@@ -1,6 +1,8 @@
 # Тестовое задание для Frontend-developer
 
 ## Стек технологий
+![](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 ![](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 ![](https://img.shields.io/badge/Redux-593D88?style=for-the-badge&logo=redux&logoColor=white)
 ![](https://img.shields.io/badge/-JSON--Server-blue?style=for-the-badge&logo)
@@ -9,6 +11,9 @@
 `npm run start` — запускает проект (интерфейс + сервер) <br />
 `npm run dev` — запускает frontend на порту 3000 <br />
 `npm run server` — запускает сервер на порту 3001
+
+## Демо
+Посмотреть скринкаст можно [здесь](https://youtu.be/y_Owbd5uXD4)
 
 ## Описание
 Одностраничное приложение "Список компаний". Слева имеется таблица со списком компаний. <br />
@@ -26,3 +31,4 @@
 * Удаление может быть множественное
 * При добавлении/удалении сотрудников у компании счетчик сотрудников в таблице компаний обновляется
 * При скролле страницы компании загружаются динамически
+* Поля, доступные для редактирования, валидируются
