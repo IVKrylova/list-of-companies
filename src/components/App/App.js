@@ -20,6 +20,7 @@ import {
   uncheckAllCoworkers,
   addNewCoworkerToStore,
   deleteCoworkerFromStore,
+  updateCoworkers,
 } from '../../store/actionCreators/coworkers';
 import {
   addCompanyToChecked,
@@ -34,6 +35,7 @@ import {
   deleteAllCoworkers,
   addNewCoworkerToTable,
   deleteCoworkersFromTable,
+  updateSelectedCoworkers,
 } from '../../store/actionCreators/selectedCoworkers';
 import {
   addCoworkerToChecked,
@@ -131,6 +133,7 @@ const App = _ => {
 
   const handleClickCheckboxCoworker = coworker => {
     dispatch(checkCoworker(coworkers, coworker));
+
     if (coworker.checked) {
       dispatch(addCoworkerToChecked(checkedCoworkers, coworker));
     } else {
@@ -176,7 +179,10 @@ const App = _ => {
     mainApi.updateCoworker(coworker)
       .then(_ => {
         mainApi.getCoworkers()
-          .then(res => dispatch(getCoworkers(res)))
+          .then(res => {
+            dispatch(updateCoworkers(coworkers, coworker));
+            dispatch(updateSelectedCoworkers(selectedCoworkers, coworker));
+          })
       })
       .catch(err => console.log(err));
   }

@@ -16,6 +16,7 @@ export const checkCoworker = (coworkers, coworker) => {
   return {
     type: coworkersActionTypes.CHECK_COWORKER,
     payload: coworkers.map(el => {
+
       if (el.id === coworker.id) el.checked = !el.checked;
 
       return el;
@@ -56,5 +57,20 @@ export const deleteCoworkerFromStore = coworkers => {
   return {
     type: coworkersActionTypes.DELETE_COWORKER_FROM_STORE,
     payload: coworkers.filter(el => el.checked === false),
+  }
+}
+
+export const updateCoworkers = (coworkers, coworker) => {
+  return {
+    type: coworkersActionTypes.UPDATE_COWORKERS,
+    payload: coworkers.map(el => {
+      if (el.id === coworker.id) {
+        el.name = coworker.name;
+        el.lastname = coworker.lastname;
+        el.position = coworker.position;
+      }
+
+      return el;
+    }),
   }
 }

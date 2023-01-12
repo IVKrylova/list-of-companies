@@ -41,3 +41,18 @@ export const deleteCoworkersFromTable = coworkers => {
     payload: coworkers.filter(el => el.checked === false),
   }
 }
+
+export const updateSelectedCoworkers = (coworkers, coworker) => {
+  return {
+    type: selectedCoworkersActionTypes.UPDATE_SELECTED_COWORKERS,
+    payload: coworkers.map(el => {
+      if (el.id === coworker.id) {
+        el.name = coworker.name;
+        el.lastname = coworker.lastname;
+        el.position = coworker.position;
+      }
+
+      return el;
+    }),
+  }
+}

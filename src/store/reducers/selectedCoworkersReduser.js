@@ -36,6 +36,11 @@ export const selectedCoworkersReduser = (state = initialState, action) => {
         ...state,
         selectedCoworkers: action.payload,
       };
+      case selectedCoworkersActionTypes.UPDATE_SELECTED_COWORKERS:
+      return {
+        ...state,
+        selectedCoworkers: action.payload,
+      };
     default:
       return state;
   }
