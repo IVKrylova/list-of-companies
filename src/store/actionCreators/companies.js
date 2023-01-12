@@ -47,9 +47,23 @@ export const addNewCompanyToStore = (companies, company) => {
   }
 }
 
-export const deleteCompanyFromStore = (companies) => {
+export const deleteCompanyFromStore = companies => {
   return {
     type: companiesActionTypes.DELETE_COMPANY_FROM_STORE,
     payload: companies.filter(el => el.checked === false),
+  }
+}
+
+export const updateCompany = (companies, company) => {
+  return {
+    type: companiesActionTypes.UPDATE_COMPANY,
+    payload: companies.map(el => {
+      if (el.id === company.id) {
+        el.name = company.name;
+        el.address = company.address;
+      }
+
+      return el;
+    }),
   }
 }

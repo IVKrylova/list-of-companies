@@ -12,6 +12,7 @@ import {
   uncheckAllCompanies,
   addNewCompanyToStore,
   deleteCompanyFromStore,
+  updateCompany,
 } from '../../store/actionCreators/companies';
 import {
   getCoworkers,
@@ -169,8 +170,9 @@ const App = _ => {
     mainApi.updateCompany(company)
       .then(_ => {
         mainApi.getCompanies()
-          .then(res => res.res)
-          .then(res => dispatch(getCompanies(res)))
+          .then(res => {
+            dispatch(updateCompany(companies, company))
+          })
       })
       .catch(err => console.log(err));
   }

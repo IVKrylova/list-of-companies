@@ -2,18 +2,8 @@
   "companies": [
     {
       "name": "Baikal",
-      "address": "г. Москва, ул. Заломова, д.18",
+      "address": "г. Москва, ул. Заломова, д.20",
       "id": 4
-    },
-    {
-      "name": "Ideas",
-      "address": "г. Москва, ул. Ленина, д.9",
-      "id": 5
-    },
-    {
-      "name": "Ivanovo",
-      "address": "г. Томск, ул. Мира, д.1",
-      "id": 6
     },
     {
       "name": "Link",
@@ -46,16 +36,6 @@
       "id": 16
     },
     {
-      "name": "Shadow",
-      "address": "г. Томск, ул. Мира, д.1",
-      "id": 17
-    },
-    {
-      "name": "Dream",
-      "address": "г. Томск, ул. Мира, д.1",
-      "id": 18
-    },
-    {
       "name": "Village",
       "address": "г. Томск, ул. Мира, д.1",
       "id": 19
@@ -71,93 +51,28 @@
       "id": 21
     },
     {
-      "name": "Red Car",
-      "address": "г. Томск, ул. Мира, д.1",
-      "id": 22
+      "name": "River",
+      "address": "г. Москва, ул. Заломова, д.5",
+      "id": 25
     },
     {
-      "name": "Sky",
-      "address": "г. Павлово, ул. Мира, д.4",
-      "id": 24
+      "name": "Mars",
+      "address": "г. Томск, ул. Мира, д.1",
+      "id": 26
+    },
+    {
+      "name": "Mark",
+      "address": "г. Москва, ул. Заломова, д.5",
+      "id": 27
     }
   ],
   "coworkers": [
     {
-      "name": "Иван",
-      "lastname": "Ивано",
-      "id": 18,
-      "position": "Разработчик",
-      "company": "Ideas"
-    },
-    {
-      "name": "Иван",
-      "lastname": "Иванов",
-      "id": 19,
+      "name": "Ирина",
+      "lastname": "Крылова",
+      "id": 21,
       "position": "developer",
-      "company": "Ideas"
-    },
-    {
-      "name": "Иван",
-      "lastname": "Иванов",
-      "id": 20,
-      "position": "Developer",
-      "company": "Ideas"
-    },
-    {
-      "name": "Ирина",
-      "lastname": "Крылова",
-      "company": "Link",
-      "position": "Разработчик",
-      "id": 21
-    },
-    {
-      "name": "Ирина",
-      "lastname": "Крылова",
-      "company": "Link",
-      "position": "Разработчик",
-      "id": 23
-    },
-    {
-      "name": "Ирина",
-      "lastname": "Крылова",
-      "company": "Link",
-      "position": "Разработчик",
-      "id": 25
-    },
-    {
-      "name": "Ирина",
-      "lastname": "Крылова",
-      "id": 26,
-      "position": "developer",
-      "company": "Ivanovo"
-    },
-    {
-      "name": "Ирина",
-      "lastname": "Крылова",
-      "id": 27,
-      "position": "developer",
-      "company": "Ivanovo"
-    },
-    {
-      "name": "Ирина",
-      "lastname": "Крылова",
-      "id": 29,
-      "position": "developer",
-      "company": "Ivanovo"
-    },
-    {
-      "name": "Ирина",
-      "lastname": "Крылова",
-      "id": 30,
-      "position": "developer",
-      "company": "Ivanovo"
-    },
-    {
-      "name": "Ирина",
-      "lastname": "Крылова",
-      "id": 31,
-      "position": "developer",
-      "company": "Ivanovo"
+      "company": "Link"
     },
     {
       "name": "Ирина",
@@ -190,23 +105,51 @@
     {
       "name": "Ирина",
       "lastname": "Крылова",
-      "company": "Baikal",
+      "company": "Link",
       "position": "developer",
-      "id": 49
+      "id": 52
     },
     {
       "name": "Ирина",
       "lastname": "Крылова",
-      "id": 50,
+      "id": 53,
       "position": "developer",
-      "company": "Ivanovo"
+      "company": "Blank"
     },
     {
       "name": "Ирина",
       "lastname": "Крылова",
-      "id": 51,
+      "company": "Line",
       "position": "developer",
-      "company": "Ivanovo"
+      "id": 56
+    },
+    {
+      "name": "Ирина",
+      "lastname": "Крылова",
+      "company": "Line",
+      "position": "developer",
+      "id": 57
+    },
+    {
+      "name": "Ирина",
+      "lastname": "Крылова",
+      "company": "Line",
+      "position": "developer",
+      "id": 58
+    },
+    {
+      "name": "Ирина",
+      "lastname": "Крылова",
+      "company": "Moon",
+      "position": "developer",
+      "id": 59
+    },
+    {
+      "name": "Ирина",
+      "lastname": "Крылова",
+      "company": "Link",
+      "position": "developer",
+      "id": 60
     }
   ]
 }

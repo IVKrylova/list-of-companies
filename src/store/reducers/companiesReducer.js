@@ -36,6 +36,11 @@ export const companiesReducer = (state = initialState, action) => {
         ...state,
         companies: action.payload,
       }
+      case companiesActionTypes.UPDATE_COMPANY:
+        return {
+          ...state,
+          companies: action.payload,
+        }
     default:
       return state;
   }
