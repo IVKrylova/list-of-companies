@@ -25,6 +25,7 @@ const RowCoworker = props => {
       values={values}
       sentUpdateData={props.sentUpdateCoworker}
       resetForm={resetForm}
+      id={props.coworker.id}
     >
       <textarea
         className={classNameTextares}

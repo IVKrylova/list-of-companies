@@ -5,7 +5,7 @@ const Row = props => {
   const hendleSubmitForm = evt => {
     evt.preventDefault();
 
-    props.sentUpdateData(props.values);
+    props.sentUpdateData(props.values.id ? props.values : {...props.values, id: props.id});
     props.resetForm();
   }
 

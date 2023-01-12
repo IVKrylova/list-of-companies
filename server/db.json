@@ -2,12 +2,12 @@
   "companies": [
     {
       "name": "Baikal",
-      "address": "г. Москва, ул. Заломова, д.9",
+      "address": "г. Москва, ул. Заломова, д.18",
       "id": 4
     },
     {
       "name": "Ideas",
-      "address": "г. Москва, ул. Ленина, д.8",
+      "address": "г. Москва, ул. Ленина, д.9",
       "id": 5
     },
     {
@@ -26,11 +26,6 @@
       "id": 8
     },
     {
-      "name": "Slot",
-      "address": "г. Томск, ул. Мира, д.1",
-      "id": 10
-    },
-    {
       "name": "Oka",
       "address": "г. Томск, ул. Мира, д.1",
       "id": 11
@@ -39,11 +34,6 @@
       "name": "Ocean",
       "address": "г. Томск, ул. Мира, д.1",
       "id": 12
-    },
-    {
-      "name": "River",
-      "address": "г. Томск, ул. Мира, д.1",
-      "id": 13
     },
     {
       "name": "Blank",
@@ -94,11 +84,6 @@
       "name": "Sky",
       "address": "г. Павлово, ул. Мира, д.4",
       "id": 24
-    },
-    {
-      "name": "Sql",
-      "address": "г. Москва, ул. Ленина, д.5",
-      "id": 25
     }
   ],
   "coworkers": [
@@ -112,16 +97,16 @@
     {
       "name": "Иван",
       "lastname": "Иванов",
-      "company": "Ideas",
-      "position": "Разработчик",
-      "id": 19
+      "id": 19,
+      "position": "develope",
+      "company": "Ideas"
     },
     {
       "name": "Иван",
       "lastname": "Иванов",
-      "company": "Ideas",
-      "position": "Разработчик",
-      "id": 20
+      "id": 20,
+      "position": "Developer",
+      "company": "Ideas"
     },
     {
       "name": "Ирина",
@@ -131,11 +116,8 @@
       "id": 21
     },
     {
-      "name": "Ирина",
-      "lastname": "Крылова",
-      "company": "Link",
-      "position": "Разработчик",
-      "id": 22
+      "id": 22,
+      "position": "developer"
     },
     {
       "name": "Ирина",
@@ -182,16 +164,9 @@
     {
       "name": "Ирина",
       "lastname": "Крылова",
-      "company": "Ivanovo",
-      "position": "Разработчик",
-      "id": 31
-    },
-    {
-      "name": "Ирина",
-      "lastname": "Крылова",
-      "company": "Ivanovo",
-      "position": "Разработчик",
-      "id": 32
+      "id": 31,
+      "position": "Developer",
+      "company": "Ivanovo"
     },
     {
       "name": "Ирина",
@@ -227,6 +202,13 @@
       "id": 48,
       "position": "developer",
       "company": "Ivanovo"
+    },
+    {
+      "name": "Ирина",
+      "lastname": "Крылова",
+      "company": "Baikal",
+      "position": "developer",
+      "id": 49
     }
   ]
 }
